@@ -12,7 +12,7 @@ class ExamDateSheet extends Model
 
     public function class(): BelongsTo
     {
-        return $this->belongsTo(Classes::class);
+        return $this->belongsTo(SchoolClass::class);
     }
     public function subject(): BelongsTo
     {

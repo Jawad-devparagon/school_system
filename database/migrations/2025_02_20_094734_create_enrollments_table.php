@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Classes;
+use App\Models\SchoolClass;
 use App\Models\Section;
 use App\Models\Student;
 use Illuminate\Database\Migrations\Migration;
@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Student::class)->constrained()->onDelete('cascade');
-            $table->foreignIdFor(Classes::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(SchoolClass::class)->constrained()->onDelete('cascade');
             $table->foreignIdFor(Section::class)->constrained()->onDelete('cascade');
             $table->date('year');
             $table->timestamps();

@@ -16,7 +16,7 @@ class Section extends Model
     }
     public function class(): BelongsToMany
     {
-        return $this->belongsToMany(Classes::class ,'class_sections');
+        return $this->belongsToMany(SchoolClass::class ,'class_sections');
     }
 
 }

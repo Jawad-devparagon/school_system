@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Classes extends Model
+class SchoolClass extends Model
 {
      protected $fillable = ['name', 'fee'];
-
      public function enrollments(): HasMany
      {
          return $this->hasMany(Enrollment::class);

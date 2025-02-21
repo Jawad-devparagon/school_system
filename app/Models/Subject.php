@@ -16,7 +16,7 @@ class Subject extends Model
      }
      public function class(): BelongsToMany
      {
-         return $this->belongsToMany(Classes::class, 'class_subjects');
+         return $this->belongsToMany(SchoolClass::class, 'class_subjects');
      }
      public function dateSheet(): HasMany
      {
