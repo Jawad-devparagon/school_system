@@ -16,6 +16,10 @@ class Teacher extends Model
      }
      public function degrees(): BelongsToMany
      {
-         return $this->belongsToMany(Degree::class, 'teacher_degrees');
+         return $this->belongsToMany(Degree::class, 'teacher_degrees')->withTimestamps();
+     }
+     public function schoolClasses(): BelongsToMany
+     {
+        return $this->belongsToMany(SchoolClass::class, 'class_teacher_subjects')->withPivot('subject_id')->withTimestamps();
      }
 }

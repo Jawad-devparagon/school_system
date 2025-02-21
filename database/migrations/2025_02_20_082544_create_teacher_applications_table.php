@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->onDelete('cascade');
             $table->integer('years_of_experience');
-            $table->json('degrees');
+            $table->json('degrees')->nullable();
             $table->string('status');
             $table->timestamps();
         });

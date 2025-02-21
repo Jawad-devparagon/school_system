@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\TeacherApplicationStatusEnum;
 use App\Models\Degree;
+use App\Models\TeacherApplication;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -29,9 +30,11 @@ class TeachersSeeder extends Seeder
 
         $teacherApplication = $teacherUser->application()->create([
             'years_of_experience' => 2,
-            'degrees' => $degrees,
             'status' => TeacherApplicationStatusEnum::APPROVED,
         ]);
+
+        $teacherApplication->settings()->set('ids', $degrees);
+        $teacherApplication->save();
 
          $teacherUser->assignRole('teacher');
 
@@ -39,6 +42,7 @@ class TeachersSeeder extends Seeder
             'years_of_experience' => $teacherApplication->years_of_experience
         ]);
 
-        $teacher->degrees()->attach($teacherApplication->degrees);
+        $teacher->degrees()->attach($teacherApplication->settings()->get('ids'));
+
     }
 }

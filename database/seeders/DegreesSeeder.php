@@ -13,7 +13,7 @@ class DegreesSeeder extends Seeder
         $degrees = ['MA', 'BS-IT', 'BS-Math', 'MS-Economics'];
 
       foreach ($degrees as $degree) {
-          Degree::create([
+          Degree::updateOrCreate([
               'name' => $degree
           ]);
       }

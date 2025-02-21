@@ -16,10 +16,14 @@ class Subject extends Model
      }
      public function class(): BelongsToMany
      {
-         return $this->belongsToMany(SchoolClass::class, 'class_subjects');
+         return $this->belongsToMany(SchoolClass::class, 'class_subjects')->withTimestamps();
      }
      public function dateSheet(): HasMany
      {
          return $this->hasMany(ExamDateSheet::class);
+     }
+     public function teachers()
+     {
+         return $this->belongsToMany(Teacher::class, 'class_teacher_subjects')->withTimestamps();
      }
 }

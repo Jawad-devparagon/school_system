@@ -16,14 +16,18 @@ class SchoolClass extends Model
      }
      public function sections(): BelongsToMany
      {
-         return $this->belongsToMany(Section::class, 'class_sections');
+         return $this->belongsToMany(Section::class, 'class_sections')->withTimestamps();
      }
      public function subjects(): BelongsToMany
      {
-         return $this->belongsToMany(Subject::class, 'class_subjects');
+         return $this->belongsToMany(Subject::class, 'class_subjects')->withTimestamps();
      }
      public function examDateSheets(): HasMany
      {
          return $this->hasMany(ExamDateSheet::class);
+     }
+     public function teachers()
+     {
+         return $this->belongsToMany(Teacher::class, 'class_teacher_subjects')->withPivot('subject_id')->withTimestamps();
      }
 }

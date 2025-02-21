@@ -13,7 +13,7 @@ class RolesAndPermissionsSeeder extends Seeder
          $roles = ['admin', 'teacher', 'student'];
 
         foreach ($roles as $role) {
-            Role::create(['name' => $role]);
+            Role::updateOrCreate(['name' => $role]);
          }
     }
 }
