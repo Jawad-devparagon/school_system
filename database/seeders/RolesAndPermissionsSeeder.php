@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\RolesEnum;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 
@@ -9,10 +10,8 @@ class RolesAndPermissionsSeeder extends Seeder
 {
     public function run(): void
     {
-        $roles = ['admin', 'teacher', 'student'];
-
-        foreach ($roles as $role) {
-            Role::updateOrCreate(['name' => $role]);
-        }
+            Role::insert(
+                array_map(fn($role) => ['name' => $role, 'guard_name' => 'web'], RolesEnum::values())
+            );
     }
 }

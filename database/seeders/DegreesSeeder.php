@@ -9,13 +9,26 @@ class DegreesSeeder extends Seeder
 {
     public function run(): void
     {
-        $degrees = ['MA', 'BS-IT', 'BS-Math', 'MS-Economics'];
+        $degrees = [
+            ['name' => 'Matric'],
+            ['name' => 'Inter'],
+            ['name' => 'FA'],
+            ['name' => 'FSc'],
+            ['name' => 'ICS'],
+            ['name' => 'ICom'],
+            ['name' => 'BA'],
+            ['name' => 'BSc'],
+            ['name' => 'BS-IT'],
+            ['name' => 'BS-CS'],
+            ['name' => 'BS-Math'],
+            ['name' => 'BBA'],
+            ['name' => 'MBA'],
+            ['name' => 'MA'],
+            ['name' => 'MS-Economics'],
+            ['name' => 'MPhil'],
+            ['name' => 'PhD']
+        ];
 
-        foreach ($degrees as $degree) {
-            Degree::updateOrCreate([
-                'name' => $degree,
-            ]);
-        }
-
+        Degree::insert($degrees);
     }
 }

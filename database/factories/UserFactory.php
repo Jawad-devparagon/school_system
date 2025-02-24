@@ -2,31 +2,51 @@
 
 namespace Database\Factories;
 
+use App\Enums\GenderEnum;
+use App\Models\Degree;
+use App\Models\Teacher;
+use App\Models\TeacherApplication;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
 class UserFactory extends Factory
 {
     protected static ?string $password;
-
     public function definition(): array
     {
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'mobile_no' => fake()->unique()->e164PhoneNumber(),
+            'mobile_no' => fake()->unique()->PhoneNumber(),
             'address' => fake()->streetAddress(),
             'email_verified_at' => now(),
-            'gender' => fake()->randomElement(['male', 'female']),
+            'gender' => fake()->randomElement(GenderEnum::values()),
             'dob' => fake()->dateTime()->format('Y-m-d H:i:s'),
-            'image' => 'noimg.png',
-            'password' => static::$password ??= Hash::make('password'),
+            'image' => 'https://static.vecteezy.com/system/resources/thumbnails/024/183/525/small/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg',
+            'password' => 'password',
             'remember_token' => Str::random(10),
         ];
+    }
+
+    public function configure(): static
+    {
+        return $this->afterCreating(function (User $user) {
+
+            $user->assignRole('teacher');
+
+            $teacherApplication = TeacherApplication::factory()->create([
+                'user_id' => $user->id,
+            ]);
+
+            $teacher = Teacher::factory()->create([
+                'user_id' => $user->id,
+                'years_of_experience' => $teacherApplication->years_of_experience,
+            ]);
+
+            $degrees = Degree::inRandomOrder()->limit(2)->pluck('id')->toArray();
+            $teacher->degrees()->attach($degrees);
+        });
     }
 
     public function unverified(): static

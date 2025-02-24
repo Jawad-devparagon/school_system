@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('mobile_no');
             $table->string('address');
-            $table->enum('gender', ['male', 'female', 'other']);
+            $table->string('gender');
             $table->string('image');
             $table->dateTime('dob');
             $table->rememberToken();
