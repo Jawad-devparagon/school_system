@@ -29,11 +29,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function student(): HasOne
-    {
-        return $this->hasOne(Student::class);
-    }
-
     public function application(): HasOne
     {
         return $this->hasOne(TeacherApplication::class);
