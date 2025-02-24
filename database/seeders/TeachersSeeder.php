@@ -12,7 +12,7 @@ class TeachersSeeder extends Seeder
 {
     public function run(): void
     {
-        $teachers = User::factory()
+        User::factory()
             ->count(5)
             ->create()
             ->each(function ($user) {
