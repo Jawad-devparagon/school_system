@@ -39,13 +39,13 @@ class UserFactory extends Factory
                 'user_id' => $user->id,
             ]);
 
-            $teacher = Teacher::factory()->create([
+            $degrees = Degree::query()->inRandomOrder()->limit(2)->get();
+            Teacher::factory()
+                ->hasAttached($degrees)
+                ->create([
                 'user_id' => $user->id,
                 'years_of_experience' => $teacherApplication->years_of_experience,
             ]);
-
-            $degrees = Degree::inRandomOrder()->limit(2)->pluck('id')->toArray();
-            $teacher->degrees()->attach($degrees);
         });
     }
 
