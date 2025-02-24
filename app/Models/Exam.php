@@ -8,14 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Exam extends Model
 {
-     protected $fillable = ['exam_date_sheet_id', 'no_of_questions', 'total_marks'];
+    protected $fillable = ['exam_date_sheet_id', 'no_of_questions', 'total_marks'];
 
-     public function dateSheet(): BelongsTo
-     {
+    public function dateSheet(): BelongsTo
+    {
         return $this->belongsTo(ExamDateSheet::class);
-     }
-     public function questions(): HasMany
-     {
+    }
+
+    public function questions(): HasMany
+    {
         return $this->hasMany(ExamQuestion::class);
-     }
+    }
 }

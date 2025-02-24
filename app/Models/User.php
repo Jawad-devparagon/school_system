@@ -19,9 +19,11 @@ class User extends Authenticatable
         'address',
         'gender',
         'dob',
-        'image'
+        'image',
     ];
-    use HasFactory, Notifiable, HasRoles;
+
+    use HasFactory, HasRoles, Notifiable;
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -31,14 +33,17 @@ class User extends Authenticatable
     {
         return $this->hasOne(Student::class);
     }
+
     public function application(): HasOne
     {
         return $this->hasOne(TeacherApplication::class);
     }
+
     public function teacher(): HasOne
     {
         return $this->hasOne(Teacher::class);
     }
+
     protected function casts(): array
     {
         return [

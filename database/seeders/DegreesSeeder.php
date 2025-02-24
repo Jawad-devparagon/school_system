@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Degree;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DegreesSeeder extends Seeder
@@ -12,11 +11,11 @@ class DegreesSeeder extends Seeder
     {
         $degrees = ['MA', 'BS-IT', 'BS-Math', 'MS-Economics'];
 
-      foreach ($degrees as $degree) {
-          Degree::updateOrCreate([
-              'name' => $degree
-          ]);
-      }
+        foreach ($degrees as $degree) {
+            Degree::updateOrCreate([
+                'name' => $degree,
+            ]);
+        }
 
     }
 }

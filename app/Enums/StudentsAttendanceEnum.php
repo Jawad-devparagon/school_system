@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum StudentsAttendanceEnum :string
+enum StudentsAttendanceEnum: string
 {
-     case PRESENT = 'present';
-     case ABSENT = 'absent';
-     case LEAVE = 'leave';
+    case PRESENT = 'present';
+    case ABSENT = 'absent';
+    case LEAVE = 'leave';
 }

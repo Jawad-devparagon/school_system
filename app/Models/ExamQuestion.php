@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ExamQuestion extends Model
 {
-     protected $fillable = ['question'];
+    protected $fillable = ['question'];
 
-     public function exam(): BelongsTo
-     {
-         return $this->belongsTo(Exam::class);
-     }
-
+    public function exam(): BelongsTo
+    {
+        return $this->belongsTo(Exam::class);
+    }
 }

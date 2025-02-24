@@ -2,47 +2,35 @@
 
 namespace Database\Seeders;
 
-use App\Enums\TeacherApplicationStatusEnum;
 use App\Models\Degree;
+use App\Models\Teacher;
 use App\Models\TeacherApplication;
 use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class TeachersSeeder extends Seeder
 {
     public function run(): void
     {
-         $teacherUser = User::create([
-             'name' => 'test teacher',
-             'email' => 'test@teacher.com',
-             'password' => Hash::make('12345678'),
-             'mobile_no' => '123456789',
-             'address' => 'Multan',
-             'gender' => 'male',
-             'dob' => Carbon::now(),
-             'image' => 'noimg.png',
-         ]);
+        $teachers = User::factory()
+            ->count(5)
+            ->create()
+            ->each(function ($user) {
 
-         $degrees = Degree::inRandomOrder()->limit(3)->pluck('id')->toArray();
+                $user->assignRole('teacher');
 
-        $teacherApplication = $teacherUser->application()->create([
-            'years_of_experience' => 2,
-            'status' => TeacherApplicationStatusEnum::APPROVED,
-        ]);
+                $teacherApplication = TeacherApplication::factory()->create([
+                    'user_id' => $user->id,
+                ]);
 
-        $teacherApplication->settings()->set('ids', $degrees);
-        $teacherApplication->save();
+                $teacher = Teacher::factory()->create([
+                    'user_id' => $user->id,
+                    'years_of_experience' => $teacherApplication->years_of_experience,
+                ]);
 
-         $teacherUser->assignRole('teacher');
-
-        $teacher = $teacherUser->teacher()->create([
-            'years_of_experience' => $teacherApplication->years_of_experience
-        ]);
-
-        $teacher->degrees()->attach($teacherApplication->settings()->get('ids'));
+                $degrees = Degree::inRandomOrder()->limit(3)->pluck('id')->toArray();
+                $teacher->degrees()->attach($degrees);
+            });
 
     }
 }
