@@ -2,9 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Enums\AtendanceStatusEnum;
 use App\Enums\GenderEnum;
-use App\Enums\StudentStatusEnum;
 use App\Models\Attendance;
 use App\Models\Degree;
 use App\Models\Enrollment;
@@ -32,6 +30,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+
     public function configure(): static
     {
         return $this->afterCreating(function (User $user) {
@@ -45,9 +44,9 @@ class UserFactory extends Factory
             Student::factory()
                 ->has(
                     Enrollment::factory()
-                    ->has(
-                        Attendance::factory()
-                    )
+                        ->has(
+                            Attendance::factory()
+                        )
                 )
                 ->create([
                     'user_id' => $user->id,
@@ -62,6 +61,7 @@ class UserFactory extends Factory
                 ]);
         });
     }
+
     public function unverified(): static
     {
         return $this->state(fn (array $attributes) => [

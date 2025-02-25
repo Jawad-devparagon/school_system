@@ -34,14 +34,17 @@ class User extends Authenticatable
     {
         return $this->hasOne(TeacherApplication::class);
     }
+
     public function teacher(): HasOne
     {
         return $this->hasOne(Teacher::class);
     }
+
     public function student(): HasOne
     {
         return $this->hasOne(Student::class);
     }
+
     protected function casts(): array
     {
         return [

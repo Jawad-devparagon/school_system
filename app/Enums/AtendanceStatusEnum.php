@@ -7,9 +7,9 @@ use App\Traits\EnumToArray;
 enum AtendanceStatusEnum: string
 {
     use EnumToArray;
-     case PRESENT = 'present';
+    case PRESENT = 'present';
 
-     case ABSENT = 'absent';
+    case ABSENT = 'absent';
 
-     case LEAVE = 'leave';
+    case LEAVE = 'leave';
 }

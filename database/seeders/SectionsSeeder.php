@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Section;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SectionsSeeder extends Seeder
@@ -12,7 +11,7 @@ class SectionsSeeder extends Seeder
     {
         $sectionsData = [
             ['name' => 'A'],
-            ['name' => 'B']
+            ['name' => 'B'],
         ];
 
         Section::insert($sectionsData);
