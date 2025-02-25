@@ -10,8 +10,10 @@ class RolesAndPermissionsSeeder extends Seeder
 {
     public function run(): void
     {
-            Role::insert(
-                array_map(fn($role) => ['name' => $role, 'guard_name' => 'web'], RolesEnum::values())
-            );
+        $roleData = array_map(fn ($role) => ['name' => $role, 'guard_name' => 'web'], RolesEnum::values());
+
+        Role::insert(
+            $roleData
+        );
     }
 }

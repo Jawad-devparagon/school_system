@@ -13,6 +13,7 @@ use Illuminate\Support\Str;
 class UserFactory extends Factory
 {
     protected static ?string $password;
+
     public function definition(): array
     {
         return [
@@ -43,9 +44,9 @@ class UserFactory extends Factory
             Teacher::factory()
                 ->hasAttached($degrees)
                 ->create([
-                'user_id' => $user->id,
-                'years_of_experience' => $teacherApplication->years_of_experience,
-            ]);
+                    'user_id' => $user->id,
+                    'years_of_experience' => $teacherApplication->years_of_experience,
+                ]);
         });
     }
 

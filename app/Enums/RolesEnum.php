@@ -7,9 +7,9 @@ use App\Traits\EnumToArray;
 enum RolesEnum: string
 {
     use EnumToArray;
-     case ADMIN = 'admin';
+    case ADMIN = 'admin';
 
-     case TEACHER = 'teacher';
+    case TEACHER = 'teacher';
 
-     case STUDENT = 'student';
+    case STUDENT = 'student';
 }

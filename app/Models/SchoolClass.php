@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SchoolClass extends Model
 {
@@ -19,7 +18,7 @@ class SchoolClass extends Model
     {
         return $this->belongsToMany(Subject::class, 'class_subjects')->withTimestamps();
     }
-    
+
     public function teachers()
     {
         return $this->belongsToMany(Teacher::class, 'class_teacher_subjects')->withPivot('subject_id')->withTimestamps();

@@ -26,7 +26,7 @@ class DegreesSeeder extends Seeder
             ['name' => 'MA'],
             ['name' => 'MS-Economics'],
             ['name' => 'MPhil'],
-            ['name' => 'PhD']
+            ['name' => 'PhD'],
         ];
 
         Degree::insert($degrees);
