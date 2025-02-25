@@ -2,8 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Enums\AtendanceStatusEnum;
 use App\Enums\GenderEnum;
+use App\Enums\StudentStatusEnum;
+use App\Models\Attendance;
 use App\Models\Degree;
+use App\Models\Enrollment;
+use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\TeacherApplication;
 use App\Models\User;
@@ -12,8 +17,6 @@ use Illuminate\Support\Str;
 
 class UserFactory extends Factory
 {
-    protected static ?string $password;
-
     public function definition(): array
     {
         return [
@@ -29,7 +32,6 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
-
     public function configure(): static
     {
         return $this->afterCreating(function (User $user) {
@@ -40,6 +42,17 @@ class UserFactory extends Factory
                 'user_id' => $user->id,
             ]);
 
+            Student::factory()
+                ->has(
+                    Enrollment::factory()
+                    ->has(
+                        Attendance::factory()
+                    )
+                )
+                ->create([
+                    'user_id' => $user->id,
+                ]);
+
             $degrees = Degree::query()->inRandomOrder()->limit(2)->get();
             Teacher::factory()
                 ->hasAttached($degrees)
@@ -49,7 +62,6 @@ class UserFactory extends Factory
                 ]);
         });
     }
-
     public function unverified(): static
     {
         return $this->state(fn (array $attributes) => [
