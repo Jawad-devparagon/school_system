@@ -36,11 +36,10 @@ class UserFactory extends Factory
     public function configure(): static
     {
         return $this->afterCreating(function (User $user) {
-            $role = Role::whereIn('name', [RolesEnum::TEACHER, RolesEnum::STUDENT])->inRandomOrder()->first();
+            $role = Role::whereIn('name', [RolesEnum::TEACHER, RolesEnum::STUDENT])->inRandomOrder()->pluck('name')->first();
 
             $user->assignRole($role);
-
-            if ($role === RolesEnum::TEACHER) {
+            if ($role === RolesEnum::TEACHER->value) {
                 $teacherApplication = TeacherApplication::factory()->create([
                     'user_id' => $user->id,
                 ]);
