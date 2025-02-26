@@ -12,7 +12,7 @@ class StudentFactory extends Factory
         return [
             'guardian_name' => fake()->name,
             'guardian_mobile' => fake()->unique()->PhoneNumber(),
-            'status' => fake()->randomElement(StudentStatusEnum::cases()),
+            'status' => fake()->randomElement(StudentStatusEnum::values()),
         ];
     }
 }

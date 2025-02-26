@@ -12,6 +12,7 @@ use App\Models\TeacherApplication;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class UserFactory extends Factory
 {
@@ -34,38 +35,33 @@ class UserFactory extends Factory
     public function configure(): static
     {
         return $this->afterCreating(function (User $user) {
+            $roles = Role::whereIn('name', ['teacher', 'student'])->pluck('name')->toArray();
 
-            $user->assignRole('teacher');
+            $role = fake()->randomElement($roles);
+            $user->assignRole($role);
 
-            $teacherApplication = TeacherApplication::factory()->create([
-                'user_id' => $user->id,
-            ]);
-
-            Student::factory()
-                ->has(
-                    Enrollment::factory()
-                        ->has(
-                            Attendance::factory()
-                        )
-                )
-                ->create([
+            if ($role === 'teacher') {
+                $teacherApplication = TeacherApplication::factory()->create([
                     'user_id' => $user->id,
                 ]);
 
-            $degrees = Degree::query()->inRandomOrder()->limit(2)->get();
-            Teacher::factory()
-                ->hasAttached($degrees)
-                ->create([
-                    'user_id' => $user->id,
-                    'years_of_experience' => $teacherApplication->years_of_experience,
-                ]);
+                $degrees = Degree::query()->inRandomOrder()->limit(2)->get();
+                Teacher::factory()
+                    ->hasAttached($degrees)
+                    ->create([
+                        'user_id' => $user->id,
+                        'years_of_experience' => $teacherApplication->years_of_experience,
+                    ]);
+            } else {
+                Student::factory()
+                    ->has(
+                        Enrollment::factory()
+                            ->has(Attendance::factory())
+                    )
+                    ->create([
+                        'user_id' => $user->id,
+                    ]);
+            }
         });
-    }
-
-    public function unverified(): static
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
     }
 }
