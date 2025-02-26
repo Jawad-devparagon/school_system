@@ -13,7 +13,7 @@ class EnrollmentFactory extends Factory
         return [
             'school_class_id' => SchoolClass::query()->inRandomOrder()->value('id'),
             'section_id' => Section::query()->inRandomOrder()->value('id'),
-            'year' => fake()->date(),
+            'year' => $this->faker->date(),
         ];
     }
 }

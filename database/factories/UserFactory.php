@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Enums\GenderEnum;
+use App\Enums\RolesEnum;
 use App\Models\Attendance;
 use App\Models\Degree;
 use App\Models\Enrollment;
@@ -19,13 +20,13 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'mobile_no' => fake()->unique()->PhoneNumber(),
-            'address' => fake()->streetAddress(),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'mobile_no' => $this->faker->unique()->PhoneNumber(),
+            'address' => $this->faker->streetAddress(),
             'email_verified_at' => now(),
-            'gender' => fake()->randomElement(GenderEnum::values()),
-            'dob' => fake()->dateTime()->format('Y-m-d H:i:s'),
+            'gender' => $this->faker->randomElement(GenderEnum::values()),
+            'dob' => $this->faker->dateTime()->format('Y-m-d H:i:s'),
             'image' => 'https://static.vecteezy.com/system/resources/thumbnails/024/183/525/small/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg',
             'password' => 'password',
             'remember_token' => Str::random(10),
@@ -35,12 +36,11 @@ class UserFactory extends Factory
     public function configure(): static
     {
         return $this->afterCreating(function (User $user) {
-            $roles = Role::whereIn('name', ['teacher', 'student'])->pluck('name')->toArray();
+            $role = Role::whereIn('name', [RolesEnum::TEACHER, RolesEnum::STUDENT])->inRandomOrder()->first();
 
-            $role = fake()->randomElement($roles);
             $user->assignRole($role);
 
-            if ($role === 'teacher') {
+            if ($role === RolesEnum::TEACHER) {
                 $teacherApplication = TeacherApplication::factory()->create([
                     'user_id' => $user->id,
                 ]);

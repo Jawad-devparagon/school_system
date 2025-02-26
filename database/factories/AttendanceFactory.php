@@ -12,8 +12,8 @@ class AttendanceFactory extends Factory
     {
         return [
             'subject_id' => Subject::query()->inRandomOrder()->value('id'),
-            'date' => fake()->date(),
-            'status' => fake()->randomElement(AtendanceStatusEnum::values()),
+            'date' => $this->faker->date(),
+            'status' => $this->faker->randomElement(AtendanceStatusEnum::values()),
         ];
     }
 }

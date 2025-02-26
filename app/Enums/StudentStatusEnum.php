@@ -9,4 +9,5 @@ enum StudentStatusEnum: string
     use EnumToArray;
     case PENDING = 'pending';
     case APPROVED = 'approved';
+    case REJECTED = 'rejected';
 }

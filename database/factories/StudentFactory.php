@@ -10,9 +10,9 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'guardian_name' => fake()->name,
-            'guardian_mobile' => fake()->unique()->PhoneNumber(),
-            'status' => fake()->randomElement(StudentStatusEnum::values()),
+            'guardian_name' => $this->faker->name,
+            'guardian_mobile' => $this->faker->unique()->PhoneNumber(),
+            'status' => $this->faker->randomElement(StudentStatusEnum::values()),
         ];
     }
 }
