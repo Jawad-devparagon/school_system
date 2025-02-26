@@ -40,27 +40,40 @@ class UserFactory extends Factory
 
             $user->assignRole($role);
             if ($role === RolesEnum::TEACHER->value) {
-                $teacherApplication = TeacherApplication::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-
-                $degrees = Degree::query()->inRandomOrder()->limit(2)->get();
-                Teacher::factory()
-                    ->hasAttached($degrees)
-                    ->create([
-                        'user_id' => $user->id,
-                        'years_of_experience' => $teacherApplication->years_of_experience,
-                    ]);
+                $this->createTeacher($user);
             } else {
-                Student::factory()
-                    ->has(
-                        Enrollment::factory()
-                            ->has(Attendance::factory())
-                    )
-                    ->create([
-                        'user_id' => $user->id,
-                    ]);
+                $this->createStudent($user);
             }
         });
+    }
+
+    protected function createTeacher($user)
+    {
+        $teacherApplication = TeacherApplication::factory()->create([
+            'user_id' => $user->id,
+        ]);
+
+        $degrees = $teacherApplication->settings()->get('ids');
+
+        $degreeInstances = Degree::whereIn('id', $degrees)->get();
+
+        Teacher::factory()
+            ->hasAttached($degreeInstances)
+            ->create([
+                'user_id' => $user->id,
+                'years_of_experience' => $teacherApplication->years_of_experience,
+            ]);
+    }
+
+    protected function createStudent($user)
+    {
+        Student::factory()
+            ->has(
+                Enrollment::factory()
+                    ->has(Attendance::factory())
+            )
+            ->create([
+                'user_id' => $user->id,
+            ]);
     }
 }
