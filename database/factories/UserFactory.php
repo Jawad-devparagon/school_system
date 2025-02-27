@@ -47,7 +47,7 @@ class UserFactory extends Factory
         });
     }
 
-    protected function createTeacher($user)
+    private function createTeacher($user)
     {
         $teacherApplication = TeacherApplication::factory()->create([
             'user_id' => $user->id,
@@ -65,7 +65,7 @@ class UserFactory extends Factory
             ]);
     }
 
-    protected function createStudent($user)
+    private function createStudent($user)
     {
         Student::factory()
             ->has(
