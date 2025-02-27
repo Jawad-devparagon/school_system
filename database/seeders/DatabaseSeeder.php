@@ -14,8 +14,11 @@ class DatabaseSeeder extends Seeder
             RolesAndPermissionsSeeder::class,
             SectionsSeeder::class,
             SchoolClassSeeder::class,
+            ClassSectionsSeeder::class,
             SubjectsSeeder::class,
+            ClassSubjectsSeeder::class,
             UserSeeder::class,
+            ClassTeacherSubjectsSeeder::class,
         ]);
     }
 }

@@ -23,7 +23,7 @@ class Teacher extends Model
         return $this->belongsToMany(Degree::class, 'teacher_degrees')->withTimestamps();
     }
 
-    public function schoolClasses(): BelongsToMany
+    public function classes(): BelongsToMany
     {
         return $this->belongsToMany(SchoolClass::class, 'class_teacher_subjects')->withPivot('subject_id')->withTimestamps();
     }
