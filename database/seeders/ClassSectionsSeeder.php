@@ -10,11 +10,11 @@ class ClassSectionsSeeder extends Seeder
 {
     public function run(): void
     {
-        $classes = SchoolClass::all();
-        $sections = Section::all();
+        $classes = SchoolClass::query()->get();
+        $sections = Section::query()->get();
 
-        foreach ($classes as $class) {
+        $classes->each(function ($class) use($sections) {
             $class->sections()->attach($sections->random(rand(1, 2))->pluck('id')->toArray());
-        }
+        });
     }
 }
