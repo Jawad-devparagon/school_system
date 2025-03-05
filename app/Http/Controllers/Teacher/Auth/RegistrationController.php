@@ -6,7 +6,7 @@ use App\Actions\Teacher\Register;
 use App\Data\Teacher\RegisteredData;
 use App\Enums\GenderEnum;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Teachers\Auth\RegisterRequest;
+use App\Http\Requests\Teacher\Auth\RegisterRequest;
 use App\Models\Country;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Teachers\Auth;
+namespace App\Http\Requests\Teacher\Auth;
 
 use App\Enums\GenderEnum;
 use Illuminate\Foundation\Http\FormRequest;
