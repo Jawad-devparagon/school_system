@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Enums\GenderEnum;
 use App\Enums\RolesEnum;
 use App\Models\Attendance;
+use App\Models\Country;
 use App\Models\Degree;
 use App\Models\Enrollment;
 use App\Models\Student;
@@ -24,6 +25,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'mobile_no' => $this->faker->unique()->PhoneNumber(),
             'address' => $this->faker->streetAddress(),
+            'country_id' => Country::query()->inRandomOrder()->limit(1)->value('id'),
             'email_verified_at' => now(),
             'gender' => $this->faker->randomElement(GenderEnum::values()),
             'dob' => $this->faker->dateTime()->format('Y-m-d H:i:s'),

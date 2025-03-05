@@ -13,6 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     protected $fillable = [
+        'country_id',
         'name',
         'email',
         'password',
@@ -43,6 +44,11 @@ class User extends Authenticatable
     public function student(): HasOne
     {
         return $this->hasOne(Student::class);
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
     }
 
     protected function casts(): array

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             ClassSectionsSeeder::class,
             SubjectsSeeder::class,
             ClassSubjectsSeeder::class,
+            CountriesSeeder::class,
             UserSeeder::class,
             ClassTeacherSubjectsSeeder::class,
         ]);
