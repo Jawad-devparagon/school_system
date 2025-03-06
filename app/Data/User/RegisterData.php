@@ -1,11 +1,12 @@
 <?php
-namespace App\Data\Teacher\Auth;
+
+namespace App\Data\User;
 
 use App\Enums\GenderEnum;
 use Carbon\Carbon;
 use Spatie\LaravelData\Data;
 
-class RegistrationData extends Data
+class RegisterData extends Data
 {
     public function __construct(
         public string $name,
@@ -16,6 +17,8 @@ class RegistrationData extends Data
         public int $country_id,
         public Carbon $dob,
         public GenderEnum $gender,
-    ) {}
-}
+    )
+    {
 
+    }
+}

@@ -32,7 +32,7 @@ class RegistrationController extends Controller
      public function store(RegisterRequest $request)
      {
          $data = $request->validated();
-         $data['dob'] = Carbon::parse($data['dob'])->format('Y-m-d');
+         $data['dob'] = Carbon::parse($data['dob']);
 
          $teacher = Register::handle(RegistrationData::from($data));
 
