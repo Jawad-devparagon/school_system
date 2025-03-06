@@ -21,7 +21,6 @@ class User extends Authenticatable
         'address',
         'gender',
         'dob',
-        'image',
     ];
 
     use HasFactory, HasRoles, Notifiable;

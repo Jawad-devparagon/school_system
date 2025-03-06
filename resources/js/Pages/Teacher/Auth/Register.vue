@@ -14,7 +14,6 @@ const form = useForm({
   country_id: '',
   mobile_no: '',
   address: '',
-  image: '',
   dob: '',
   gender: '',
 });
@@ -22,11 +21,9 @@ const form = useForm({
 const props = defineProps({
   countries: {
     type: Array,
-    required: true
   },
   genders: {
     type: Array,
-    required: true
   }
 });
 const submit = () => {
@@ -171,28 +168,6 @@ const submit = () => {
         <InputError
             class="mt-2"
             :message="form.errors.dob"
-        />
-      </div>
-
-      <div class="mt-4">
-        <InputLabel
-            for="image"
-            value="Image"
-        />
-
-        <TextInput
-            id="image"
-            type="file"
-            class="mt-1 block w-full"
-            @input="form.image=$event.target.files[0]"
-        />
-        <progress v-if="form.progress" :value="form.progress.percentage" max="100">
-          {{ form.progress.percentage }}%
-        </progress>
-
-        <InputError
-            class="mt-2"
-            :message="form.errors.image"
         />
       </div>
 

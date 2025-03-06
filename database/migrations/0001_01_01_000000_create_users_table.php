@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('country_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -17,8 +18,8 @@ return new class extends Migration
             $table->string('mobile_no');
             $table->string('address');
             $table->string('gender');
-            $table->string('image');
-            $table->dateTime('dob');
+            $table->string('image')->nullable();
+            $table->date('dob');
             $table->rememberToken();
             $table->timestamps();
         });

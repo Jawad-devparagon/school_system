@@ -18,13 +18,12 @@ class RegisterRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => ['required', 'confirmed', Password::min('8')],
+            'password' => ['required', 'confirmed', Password::defaults()],
             'country_id' => ['required', Rule::exists('countries', 'id')],
-            'mobile_no' => ['required', 'string', 'regex:/^\+?[0-9]{10,15}$/'],
+            'mobile_no' => ['required', 'regex:/^\+?[0-9]{10,15}$/'],
             'address' => ['required'],
             'dob' => ['required', 'date', 'before_or_equal:today'],
             'gender' => ['required', Rule::in(GenderEnum::values())],
-            'image' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048']
         ];
     }
 }

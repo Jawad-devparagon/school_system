@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Teacher\Auth;
 
-use App\Actions\Teacher\Register;
-use App\Data\Teacher\RegisteredData;
+use App\Actions\Teacher\Auth\Register;
+use App\Data\Teacher\Auth\RegistrationData;
 use App\Enums\GenderEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\Auth\RegisterRequest;
 use App\Models\Country;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Concurrency;
@@ -21,6 +22,7 @@ class RegistrationController extends Controller
              fn() => Country::getFormattedCountries(),
              fn() => GenderEnum::getFormattedValues()
          ]);
+
          return Inertia::render('Teacher/Auth/Register', [
               'countries' => $countries,
               'genders' => $genders
@@ -30,12 +32,9 @@ class RegistrationController extends Controller
      public function store(RegisterRequest $request)
      {
          $data = $request->validated();
-         $file = $request->file('image');
-         $fileName = time() . '_' . $file->getClientOriginalName();
-         $file->storeAs('uploads', $fileName);
-         $data['image'] = $fileName;
+         $data['dob'] = Carbon::parse($data['dob'])->format('Y-m-d');
 
-         $teacher = Register::handle(RegisteredData::from($data));
+         $teacher = Register::handle(RegistrationData::from($data));
 
          $teacher->assignRole('teacher');
 
