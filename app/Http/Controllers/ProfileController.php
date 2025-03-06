@@ -20,6 +20,7 @@ class ProfileController extends Controller
             'status' => session('status'),
         ]);
     }
+
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
@@ -32,6 +33,7 @@ class ProfileController extends Controller
 
         return Redirect::route('profile.edit');
     }
+
     public function destroy(Request $request): RedirectResponse
     {
         $request->validate([

@@ -17,8 +17,5 @@ class RegisterData extends Data
         public int $country_id,
         public Carbon $dob,
         public GenderEnum $gender,
-    )
-    {
-
-    }
+    ) {}
 }

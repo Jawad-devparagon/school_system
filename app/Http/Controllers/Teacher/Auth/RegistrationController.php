@@ -9,39 +9,31 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\Auth\RegisterRequest;
 use App\Models\Country;
 use Carbon\Carbon;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Concurrency;
 use Inertia\Inertia;
 
 class RegistrationController extends Controller
 {
-     public function create()
-     {
-         [$countries, $genders] = Concurrency::run([
-             fn() => Country::getFormattedCountries(),
-             fn() => GenderEnum::getFormattedValues()
-         ]);
+    public function create()
+    {
+        [$countries, $genders] = Concurrency::run([
+            fn () => Country::getFormattedCountries(),
+            fn () => GenderEnum::getFormattedValues(),
+        ]);
 
-         return Inertia::render('Teacher/Auth/Register', [
-              'countries' => $countries,
-              'genders' => $genders
-         ]);
-     }
+        return Inertia::render('Teacher/Auth/Register', [
+            'countries' => $countries,
+            'genders' => $genders,
+        ]);
+    }
 
-     public function store(RegisterRequest $request)
-     {
-         $data = $request->validated();
-         $data['dob'] = Carbon::parse($data['dob']);
+    public function store(RegisterRequest $request)
+    {
+        $data = $request->validated();
+        $data['dob'] = Carbon::parse($data['dob']);
 
-         $teacher = Register::handle(RegistrationData::from($data));
+        Register::handle(RegistrationData::from($data));
 
-         $teacher->assignRole('teacher');
-
-         event(new Registered($teacher));
-
-         Auth::login($teacher);
-
-         return redirect(route('dashboard', absolute: false));
-     }
+        return redirect(route('dashboard', absolute: false));
+    }
 }

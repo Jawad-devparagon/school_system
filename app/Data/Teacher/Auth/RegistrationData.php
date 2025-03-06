@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Data\Teacher\Auth;
 
 use App\Enums\GenderEnum;
@@ -18,4 +19,3 @@ class RegistrationData extends Data
         public GenderEnum $gender,
     ) {}
 }
-

@@ -23,6 +23,7 @@ class NewPasswordController extends Controller
             'token' => $request->route('token'),
         ]);
     }
+
     public function store(Request $request): RedirectResponse
     {
         $request->validate([

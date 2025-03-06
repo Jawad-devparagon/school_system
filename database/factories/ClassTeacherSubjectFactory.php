@@ -6,6 +6,7 @@ use App\Models\SchoolClass;
 use App\Models\Subject;
 use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 class ClassTeacherSubjectFactory extends Factory
 {
     public function definition(): array
@@ -15,7 +16,7 @@ class ClassTeacherSubjectFactory extends Factory
         $subject = Subject::query()->inRandomOrder()->limit(1)->value('id');
 
         return [
-            'school_class_id' =>  $class,
+            'school_class_id' => $class,
             'teacher_id' => $teacher,
             'subject_id' => $subject,
         ];

@@ -18,6 +18,7 @@ class PasswordResetLinkController extends Controller
             'status' => session('status'),
         ]);
     }
+
     public function store(Request $request): RedirectResponse
     {
         $request->validate([

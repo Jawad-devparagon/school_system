@@ -7,12 +7,12 @@ use Illuminate\Support\Collection;
 
 class Country extends Model
 {
-     protected $fillable = ['country_code', 'name', 'dial_code', 'currency_code', 'currency_symbol'];
+    protected $fillable = ['country_code', 'name', 'dial_code', 'currency_code', 'currency_symbol'];
 
-     public function users()
-     {
-         return $this->hasMany(User::class);
-     }
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
     public static function getFormattedCountries(): Collection
     {

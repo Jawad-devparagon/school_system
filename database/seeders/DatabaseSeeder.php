@@ -12,12 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Concurrency::run([
-            fn() => Artisan::call('db:seed', ['--class' => DegreesSeeder::class]),
-            fn() => Artisan::call('db:seed', ['--class' => RolesAndPermissionsSeeder::class]),
-            fn() => Artisan::call('db:seed', ['--class' => SectionsSeeder::class]),
-            fn() => Artisan::call('db:seed', ['--class' => CountriesSeeder::class]),
-            fn() => Artisan::call('db:seed', ['--class' => SubjectsSeeder::class]),
-            fn() => Artisan::call('db:seed', ['--class' => SchoolClassSeeder::class]),
+            fn () => Artisan::call('db:seed', ['--class' => DegreesSeeder::class]),
+            fn () => Artisan::call('db:seed', ['--class' => RolesAndPermissionsSeeder::class]),
+            fn () => Artisan::call('db:seed', ['--class' => SectionsSeeder::class]),
+            fn () => Artisan::call('db:seed', ['--class' => CountriesSeeder::class]),
+            fn () => Artisan::call('db:seed', ['--class' => SubjectsSeeder::class]),
+            fn () => Artisan::call('db:seed', ['--class' => SchoolClassSeeder::class]),
         ]);
 
         $this->call([

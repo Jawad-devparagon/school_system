@@ -13,7 +13,7 @@ class ClassSectionsSeeder extends Seeder
         $classes = SchoolClass::query()->get();
         $sections = Section::query()->get();
 
-        $classes->each(function ($class) use($sections) {
+        $classes->each(function ($class) use ($sections) {
             $class->sections()->attach($sections->random(rand(1, 2))->pluck('id')->toArray());
         });
     }

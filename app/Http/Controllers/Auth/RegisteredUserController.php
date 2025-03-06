@@ -21,10 +21,11 @@ class RegisteredUserController extends Controller
     public function create(): Response
     {
         return Inertia::render('Auth/Register', [
-             'countries' => Country::getFormattedCountries(),
-              'genders' => GenderEnum::getFormattedValues()
+            'countries' => Country::getFormattedCountries(),
+            'genders' => GenderEnum::getFormattedValues(),
         ]);
     }
+
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
@@ -36,11 +37,11 @@ class RegisteredUserController extends Controller
             'address' => ['required'],
             'dob' => ['required', 'date', 'before_or_equal:today'],
             'gender' => ['required', Rule::in(GenderEnum::values())],
-            'image' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048']
+            'image' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
         ]);
 
         $file = $request->file('image');
-        $fileName = time() . '_' . $file->getClientOriginalName();
+        $fileName = time().'_'.$file->getClientOriginalName();
         $file->storeAs('uploads', $fileName);
 
         $user = User::create([
@@ -52,7 +53,7 @@ class RegisteredUserController extends Controller
             'address' => $request->address,
             'dob' => $request->dob,
             'gender' => $request->gender,
-            'image' => $fileName
+            'image' => $fileName,
         ]);
 
         event(new Registered($user));
