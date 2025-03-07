@@ -1,0 +1,8 @@
+@layer base {
+    .divider {
+        @apply text-size-14 leading-[150%] font-inter text-primary text-center before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:block before:w-full before:h-[1px] before:border-b-[1px] before:border-primary-250 before:m-auto before:z-[-2] relative z-10
+    }
+    .divider-raw {
+        @apply after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:block after:h-auto after:w-[160px] after:bg-white after:m-auto after:z-[-1]
+    }
+}

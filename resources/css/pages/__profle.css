@@ -1,0 +1,297 @@
+@layer components {
+    .profile-sec {
+
+    }
+    .profile-box {
+        @apply mt-[30px]
+    }
+    .profile-grid {
+        @apply grid grid-cols-3 items-start gap-[20px];
+    }
+    .profile-header_row {
+        @apply flex-col md:flex-row items-start;
+    }
+
+    .profile-grid .profile-card {
+        @apply w-full;
+    }
+    .profile-grid .profile-card .profile-card__header__badge {
+        @apply text-size-10 font-inter-bold
+    }
+    .profile-grid .profile-card__header__chip-box {
+        @apply gap-[5px]
+    }
+
+
+    .mentorship-models-con {
+        @apply flex flex-col items-start bg-white border border-primary-250 rounded-xl w-full pt-[23px] pl-6 pr-2;
+    }
+    .profile-grid .tab-wrapper-secondary {
+        @apply bg-none border-none rounded-none py-[20px] px-0;
+    }
+    .profile-grid .tab-wrapper-secondary .tab-box {
+        @apply gap-[15px];
+    }
+    .profile-grid .tab-wrapper-secondary .tab-header {
+        @apply lg:min-w-[220px] lg:max-w-[220px] border-none p-0;
+    }
+    .profile-grid .tab-wrapper-secondary > .tab-box > .tab-content {
+        @apply py-[20px] px-[23px] border border-primary-250 rounded-[20px];
+    }
+
+    .profile-grid .tab-wrapper-inner .tab-box .tab-header {
+        @apply lg:max-w-full;
+    }
+    .profile-grid .tab-wrapper-inner .tab-box .tab-header .tab-header__inner {
+        @apply justify-center p-1;
+    }
+    .profile-grid .tab-wrapper-inner .tab-box .tab-header .tab-header__inner .tab-header-item .tab-header-link {
+        @apply min-w-[191px] justify-center;
+    }
+    .profile-grid .tab-wrapper-inner .tab-box .tab-content {
+        @apply p-0;
+    }
+
+    .profile-grid .tab-wrapper-inner.tab-wrapper-inner_border .tab-box .tab-header {
+        @apply lg:max-w-full;
+    }
+    .profile-grid .tab-wrapper-inner.tab-wrapper-inner_border .tab-box .tab-header .tab-header__inner {
+        @apply justify-center p-0 bg-transparent border-0;
+    }
+    .profile-grid .tab-wrapper-inner.tab-wrapper-inner_border .tab-box .tab-header .tab-header__inner .tab-header-item .tab-header-link {
+        @apply min-w-[191px] justify-center py-1 shadow-none border-b border-transparent rounded-none;
+    }
+    .profile-grid .tab-wrapper-inner.tab-wrapper-inner_border .tab-box .tab-header .tab-header__inner .tab-header-item .tab-header-link.active {
+        @apply border-secondary;
+    }
+    .profile-grid .tab-wrapper-inner.tab-wrapper-inner_border .tab-box > .tab-content {
+        @apply p-0 bg-transparent;
+    }
+
+
+
+
+
+
+
+
+
+
+    .about-con {
+        @apply flex flex-col w-full;
+    }
+    .about-box {
+        @apply flex flex-col w-full bg-white border border-primary-250 rounded-xl pt-6 pb-[30px] px-6;
+    }
+    .about-header {
+        @apply flex flex-col w-full border-b border-primary-250 pb-[10px] mb-4
+    }
+    .about-title {
+        @apply text-size-20 leading-[150%] font-inter-bold text-primary
+    }
+    .about-content {
+        @apply flex flex-col gap-[23px] text-size-12 leading-[160%] tracking-wide font-inter text-primary text-opacity-70
+    }
+
+    .review-con {
+        @apply flex flex-col w-full;
+    }
+    .review-box {
+        @apply flex flex-col w-full bg-white border border-primary-250 rounded-xl pt-6 pb-[30px] px-6;
+    }
+    .review-header {
+        @apply flex flex-col lg:flex-row items-center justify-between w-full mb-[30px]
+    }
+    .review-title {
+        @apply text-size-20 leading-[150%] font-inter-bold text-primary
+    }
+    .review-sub-title {
+        @apply flex flex-row items-center text-size-16 leading-[160%] font-inter-bold text-primary text-opacity-60 relative
+    }
+    .review-content {
+        @apply flex flex-col gap-[20px] text-size-12 leading-[160%] tracking-wide font-inter text-primary text-opacity-70
+    }
+
+    .availability-con {
+        @apply flex flex-col w-full;
+    }
+    .availability-box {
+        @apply flex flex-col w-full bg-white border border-primary-250 rounded-xl pt-6 pb-[30px] px-6;
+    }
+    .availability-header {
+        @apply flex flex-col w-full border-b border-primary-250 pb-[10px] mb-4
+    }
+    .availability-title {
+        @apply text-size-20 leading-[150%] font-inter-bold text-primary
+    }
+    .availability-content {
+        @apply flex flex-col gap-[23px] text-size-12 leading-[160%] tracking-wide font-inter text-primary text-opacity-70
+    }
+    .availability-content-chip {
+        @apply text-primary text-opacity-50 text-size-14 font-inter-bold bg-primary-250 bg-opacity-50 border border-primary-250 rounded-[10px] p-[10px]
+    }
+    .availability-content-chip span {
+        @apply text-size-12 font-inter
+    }
+
+    .mentoring-sessions-con {
+        @apply flex flex-col w-full;
+    }
+    .mentoring-sessions-box {
+        @apply flex flex-col w-full bg-white border border-primary-250 rounded-xl p-6;
+    }
+    .mentoring-sessions-header {
+        @apply flex flex-col w-full mb-6
+    }
+    .mentoring-sessions-title {
+        @apply text-size-20 leading-[150%] font-inter-bold text-primary
+    }
+    .mentoring-sessions-content {
+        @apply flex flex-col gap-4
+    }
+    .mentoring-sessions-content .card-wel {
+        @apply flex flex-row justify-between border-0 py-3 px-4 text-size-16 leading-[150%] font-inter-bold m-0
+    }
+    .mentoring-sessions-content .card-wel > span {
+        @apply flex flex-row gap-[6px] items-center last-of-type:text-primary
+    }
+
+    .similar-con {
+        @apply flex flex-col w-full;
+    }
+    .similar-box {
+        @apply flex flex-col w-full bg-white border border-primary-250 rounded-xl pt-6 pb-[30px] px-6;
+    }
+    .similar-header {
+        @apply flex flex-col w-full border-b border-primary-250 pb-[10px] mb-4
+    }
+    .similar-title {
+        @apply text-size-20 leading-[150%] font-inter-bold text-primary
+    }
+    .similar-content {
+        @apply flex flex-col lg:flex-row gap-[16px] text-size-12 leading-[160%] tracking-wide font-inter text-primary text-opacity-70
+    }
+    .similar-content .profile-card__header {
+        @apply pt-[10px] px-[10px] pb-0 relative
+    }
+    .similar-content .profile-card__header__badge {
+        @apply top-[10px] right-[10px] font-inter-bold uppercase text-center text-size-10 leading-[140%]
+    }
+    .similar-content .profile-card__header__title {
+        @apply text-size-14;
+    }
+    .similar-content .profile-card__header__sub-title {
+        @apply text-size-12;
+    }
+    .similar-content .profile-card__header__chip-box {
+        @apply gap-[2px]
+    }
+    .similar-content .profile-card__header__chip-item {
+        @apply text-size-10 mb-[4px] font-inter
+    }
+    .similar-content .profile-card__content {
+        @apply py-[10px] px-[10px];
+    }
+
+    .review-card {
+        @apply flex flex-col p-4 rounded-xl
+    }
+    .review-card-header {
+        @apply flex flex-row items-center justify-start gap-3 pb-3 pl-0 border-b border-primary-250 mb-3
+    }
+    .review-card-thumbnail {
+        @apply flex flex-row w-[40px] h-[40px] rounded-full
+    }
+    .review-card-title {
+        @apply text-size-14 leading-[150%] font-inter-bold text-primary
+    }
+    .review-card-title span {
+        @apply text-size-12 leading-[150%] tracking-wide font-inter text-primary text-opacity-50 relative pl-3 ml-2
+        before:w-[4px] before:h-[4px] before:bg-primary-600 before:rounded-full before:absolute before:top-0 before:bottom-0 before:left-0 before:my-auto
+    }
+    .review-card-sub-title {
+        @apply flex flex-row text-size-12 leading-[150%] tracking-wide font-inter-bold text-primary text-opacity-60 gap-[2px]
+    }
+    .review-card-sub-comments {
+        @apply text-size-12 leading-[160%] font-inter text-primary text-opacity-70 gap-[2px]
+    }
+
+
+
+
+
+
+    .profile-grid .tab-wrapper-side .tab-box .tab-header {
+        @apply lg:max-w-full border-0 px-5 pt-5;
+    }
+    .profile-grid .tab-wrapper-side .tab-box .tab-header .tab-header__inner {
+        @apply justify-center p-1 gap-1;
+    }
+    .profile-grid .tab-wrapper-side .tab-box .tab-header .tab-header__inner .tab-header-item .tab-header-link {
+        @apply justify-center text-size-14 leading-[150%] px-[5px] py-[6px];
+    }
+    .profile-grid .tab-wrapper-side .tab-box .tab-content {
+        @apply px-5 pt-0 pb-5;
+    }
+    .profile-grid .tab-wrapper-side .tab-box .tab-content .package-item-price,
+    .profile-grid .tab-wrapper-side .tab-box .tab-content .package-item-detail,
+    .profile-grid .tab-wrapper-side .tab-box .tab-content .package-list {
+        @apply !px-5 !pb-0;
+    }
+    .profile-grid .tab-wrapper-side .tab-box .tab-content .package-list-item {
+        @apply text-opacity-80;
+    }
+    .profile-grid .tab-wrapper-side .tab-box .tab-content .package-list-text {
+        @apply pr-0;
+    }
+
+
+    .profile-grid.profile-grid_session-grid .tab-wrapper-side .tab-box .tab-header .tab-header__inner .tab-header-item {
+        @apply w-full;
+    }
+
+    .profile-grid .tab-wrapper-side .tab-box .tab-header {
+        @apply lg:max-w-full border-0 px-5 pt-5;
+    }
+
+
+
+
+
+    /** group card css */
+    .profile-card__card-detail {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-[20px]
+    }
+    .card-small {
+        @apply flex-col rounded-xl w-full max-w-full relative;
+    }
+    .card-small__header {
+        @apply flex-col md:flex-row justify-start w-full p-4 gap-4 relative
+    }
+    .card-small__header__info-box {
+        @apply flex flex-col items-start justify-center gap-[6px];
+    }
+    .card-small__header__thumbnail {
+        @apply w-full max-w-[80px] rounded-[8px] overflow-hidden;
+    }
+    .card-small__header__title {
+        @apply text-size-14 leading-[150%] font-inter-semi-bold text-primary;
+    }
+    .card-small__header__sub-title {
+        @apply text-size-12 text-success-200 font-inter-bold;
+    }
+    .card-small__header__date {
+        @apply flex flex-row text-size-12 text-primary-600 font-inter-bold tracking-wide gap-2;
+    }
+    .card-small__header__date span {
+        @apply flex flex-row gap-1
+    }
+
+    .card__card-action__ellipse-btn {
+        @apply w-fit items-center justify-center absolute top-4 right-4 mt-0 z-10 border border-primary-250 rounded-full
+    }
+    .card__card-action__ellipse-btn .dropdown-toggle {
+        @apply w-6 h-6 p-0 items-center justify-center
+    }
+
+}

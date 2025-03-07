@@ -11,28 +11,19 @@ class ClassTeacherSubject extends pivot
     use HasFactory;
 
     protected $table = 'class_teacher_subjects';
-<<<<<<< HEAD
 
-=======
->>>>>>> main
     public $incrementing = true;
 
     public function subject(): BelongsTo
     {
         return $this->belongsTo(Subject::class);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> main
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(Teacher::class);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> main
     public function class(): BelongsTo
     {
         return $this->belongsTo(SchoolClass::class);

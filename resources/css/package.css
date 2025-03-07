@@ -1,0 +1,40 @@
+
+@layer components {
+    .package-sec {
+        @apply flex mb-[32px];
+    }
+    .package-con {
+        @apply flex flex-col sm:flex-row gap-[10px];
+    }
+    .package-box {
+        @apply flex w-full max-w-full sm:max-w-[200px] self-baseline
+    }
+    .package-item {
+        @apply relative flex flex-col text-primary border border-primary-250 rounded-[10px] cursor-pointer peer-checked:package-item-shadow peer-checked:border-secondary peer-checked:peer-first-of-type:text-secondary transition duration-300 ease-in-out radio-circle
+        before:top-[12px] before:right-[12px] before:absolute;
+    }
+    .package-item-shadow {
+        box-shadow: 0 4px 10px rgba(23, 165, 221, 20%);
+    }
+    .package-item-title {
+        @apply text-size-14 leading-[140%] font-inter-bold p-[10px] pr-[26px];
+    }
+    .package-item-price {
+        @apply text-size-20 leading-none text-primary font-inter-medium p-[10px];
+    }
+    .package-item-type {
+        @apply text-size-14 text-primary-650 font-inter-medium;
+    }
+    .package-item-detail {
+        @apply flex w-full md:max-w-[196px] text-size-10 text-primary-650 font-inter-medium p-[10px];
+    }
+    .package-list {
+        @apply flex flex-col w-full px-[10px] pt-[8px]
+    }
+    .package-list-item {
+        @apply flex justify-between text-size-12 text-primary font-inter-medium py-2 border-b border-primary-250
+    }
+    .package-list-text {
+        @apply flex-1 pr-[13px];
+    }
+}

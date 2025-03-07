@@ -1,0 +1,175 @@
+@layer base {
+    .card {
+        @apply flex w-full h-auto bg-white;
+    }
+    .card-border {
+        @apply border border-primary-250 rounded-lg;
+    }
+    .card-shadow {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
+    }
+    .card-accordion-shadow {
+        box-shadow: 2px 4px 20px 0 rgba(225, 231, 245, 20%);
+    }
+    .card-accordion-rounded {
+        @apply rounded-[10px];
+    }
+
+    .card-header {
+        @apply flex flex-col md:flex-row justify-between items-center w-full py-[14px] px-5;
+    }
+    .card-title {
+        @apply text-size-16 font-inter-bold;
+    }
+    .card-sub-title {
+        @apply block text-size-10 font-inter tracking-wide;
+    }
+    .card-header-no-thumbnail {
+        @apply flex;
+    }
+
+    .card-content {
+        @apply block w-full h-auto;
+    }
+    .card-detail {
+        @apply flex w-full h-auto py-[14px] px-5
+    }
+    .card-wel {
+        @apply flex flex-col items-start justify-start border rounded-[10px] py-[7px] px-[14px] last-of-type:mb-0 mb-3
+    }
+    .card-wel-box {
+        @apply w-full flex flex-row items-center gap-1
+    }
+    .card-wel-title {
+        @apply flex flex-row items-center justify-start text-size-12 leading-[140%] font-inter-bold text-primary gap-[4px];
+    }
+    .card-wel-title svg {
+        @apply -mt-[1px]
+    }
+    .card-wel-sub-title {
+        @apply text-size-12 leading-[140%] font-inter-bold;
+    }
+    .card-call-wel {
+        @apply bg-primary bg-opacity-5 border-primary-600 border-opacity-25;
+    }
+    .card-call-wel .card-wel-box {
+        @apply justify-between
+    }
+    .card-call-wel .card-wel-sub-title {
+        @apply text-success-200 uppercase
+    }
+    .card-fee-wel {
+        @apply bg-secondary bg-opacity-10 border-secondary border-opacity-25;
+    }
+    .card-fee-wel .card-wel-box {
+        @apply gap-2
+    }
+    .card-fee-wel .card-wel-sub-title {
+        @apply text-secondary ml-1
+    }
+
+
+
+
+    .accordion-layout {
+        @apply flex-col lg:flex-row gap-5 py-4 lg:py-5 pl-4 lg:pl-5 pr-4 lg:pr-[30px];
+    }
+    .accordion-layout__left {
+        @apply flex flex-row items-start lg:items-center gap-2 lg:gap-5 w-full
+    }
+    .accordion-layout__left__icon {
+        @apply w-12 h-12 rounded-full overflow-hidden;
+    }
+    .accordion-layout__left__title {
+        @apply text-size-18 font-inter-bold text-primary
+    }
+    .accordion-layout__left__sub-title {
+        @apply block text-size-14 font-inter text-primary text-opacity-85
+    }
+    .accordion-layout__right {
+        @apply flex flex-col md:flex-row items-center lg:items-start justify-center lg:justify-end gap-3 w-full
+    }
+    .accordion-layout__right__action {
+        @apply text-center font-inter-bold uppercase w-fit px-[10px] py-[9px];
+    }
+
+
+    /** profile card css */
+    .profile-card {
+        @apply flex-col rounded-xl w-full;
+    }
+    .profile-card_horizontal {
+        @apply flex-col md:flex-row items-start;
+    }
+    .profile-card__header {
+        @apply flex-col items-start w-full pt-4 pr-[18px] pb-0 pl-4 relative
+    }
+    .profile-card_horizontal .profile-card__header {
+        @apply pt-6 pb-8 px-6 gap-3
+    }
+    .profile-card__header__info-box {
+        @apply flex flex-col md:flex-row items-center justify-center gap-[10px];
+    }
+    .profile-card__header__thumbnail {
+        @apply mb-[10px];
+    }
+    .profile-card__header__title {
+        @apply text-size-16 leading-[150%] text-primary;
+    }
+    .profile-card__header__sub-title {
+        @apply flex flex-row justify-start items-start gap-1 text-size-14 leading-[150%] text-primary text-opacity-80 mt-[2px] font-inter;
+    }
+    .profile-card__header__sub-title svg {
+        @apply mt-[4px]
+    }
+    .profile-card__header__badge {
+        @apply absolute top-4 right-[18px]
+    }
+    .profile-card__header__chip-box {
+        @apply flex-row w-full mt-[10px] gap-[4px]
+    }
+    .profile-card_horizontal .profile-card__header__chip-box {
+        @apply mt-0;
+    }
+    .profile-card__header__chip-item {
+        @apply py-[2px] px-[8px] rounded-[40px]
+    }
+    .profile-card__content {
+        @apply pt-3 pr-[18px] pb-[18px] pl-4;
+    }
+    .profile-card_horizontal .profile-card__content {
+        @apply flex flex-col items-start w-full max-w-[506px] pt-6 pb-8 px-6 gap-[10px];
+    }
+    .profile-card__action {
+        @apply font-inter-bold w-full gap-[7px];
+    }
+    .profile-card_horizontal .profile-card__action {
+    }
+
+    .package-card {
+        @apply flex-col mb-3 last-of-type:mb-0;
+    }
+    .package-card__header {
+        @apply flex-row items-start pt-3 pl-[10px] pb-[9px] pr-[3px];
+    }
+    .package-card__header__title {
+        @apply text-[13px] leading-[139%] text-primary p-0;
+    }
+    .package-card__header__sub-title {
+        @apply flex flex-row items-center text-[13px] leading-[139%] text-secondary font-inter-bold gap-[2px];
+    }
+    .package-card__header__sub-title span {
+        @apply text-[10px] leading-[150%] text-primary text-opacity-60 font-inter-medium;
+    }
+    .package-card__content {
+        @apply flex flex-col items-start pt-0 px-[10px] pb-[9px] gap-[10px];
+    }
+    .package-card__content__text {
+        @apply text-size-10 leading-[160%] text-primary text-opacity-70 font-inter;
+    }
+    .package-card__content__btn {
+        @apply py-1 px-[14px];
+    }
+
+
+}

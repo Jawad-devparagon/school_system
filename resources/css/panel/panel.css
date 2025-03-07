@@ -1,0 +1,24 @@
+
+@import '__header.css';
+@import '__main.css';
+
+@layer components {
+    .panel-wrapper {
+        @apply flex flex-col w-screen h-auto;
+    }
+    .panel-con {
+        @apply flex flex-row w-screen h-dvh;
+    }
+    .panel-col {
+        @apply flex flex-col self-stretch w-full h-dvh relative overflow-auto [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-secondary [&::-webkit-scrollbar-track]:bg-opacity-20 [&::-webkit-scrollbar-thumb]:bg-secondary;
+    }
+    .col-left {
+        @apply w-full max-w-[250px] bg-primary;
+    }
+    .col-right {
+        @apply w-full bg-earth
+    }
+    .panel-nav-logo {
+        @apply mx-auto my-[29px];
+    }
+}

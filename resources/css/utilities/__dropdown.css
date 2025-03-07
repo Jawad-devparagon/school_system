@@ -1,0 +1,53 @@
+@layer base {
+    .dropdown-group {
+        @apply relative;
+    }
+    .dropdown-menu {
+        @apply absolute overflow-hidden z-20 transition-all ease-in-out duration-500;
+    }
+    .dropdown-bottom {
+        @apply top-[100%];
+    }
+    .dropdown-slide {
+        @apply max-h-0;
+    }
+    .dropdown-slide.active {
+        @apply max-h-[500px];
+    }
+    .dropdown-popover {
+        @apply hidden max-h-[300px] overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-secondary [&::-webkit-scrollbar-track]:bg-opacity-20 [&::-webkit-scrollbar-thumb]:bg-secondary;
+    }
+    .dropdown-popover.active {
+        @apply flex;
+    }
+    .dropdown-align-right {
+        @apply right-0;
+    }
+    .dropdown-align-left {
+        @apply left-0;
+    }
+    .dropdown-align-bottom {
+        @apply top-full;
+    }
+    .dropdown-menu-plain {
+        @apply w-full min-w-[211px] h-auto border border-primary-250 bg-white rounded-[10px] p-[16px] dropdown-shadow;
+    }
+    .dropdown-shadow {
+        box-shadow: 0 2px 20px rgba(156, 167, 195, 15%);
+    }
+
+    .dropdown-toggle {
+        @apply flex bg-transparent border-none;
+    }
+    .dropdown-toggle-thumbnail {
+        @apply flex-row items-center gap-[10px] w-fit h-fit p-[10px] text-primary font-arial text-size-16 leading-[150%] stroke-primary;
+    }
+    .dropdown-toggle-icon {
+        @apply flex-row items-center w-fit h-fit p-[14px];
+    }
+    .dropdown-chevron {
+        @apply w-[16px] h-[16px] text-transparent transition ease-in-out duration-300
+        group-hover:stroke-primary group-[&.active]:stroke-primary group-[&.active]:rotate-180;
+    }
+
+}

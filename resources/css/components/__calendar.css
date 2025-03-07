@@ -1,0 +1,51 @@
+@layer base {
+    .calendar-con {
+        @apply w-full;
+    }
+    .calendar-box {
+        @apply w-full mt-6;
+    }
+    .calendar-wrapper {
+        @apply flex flex-col border border-primary-250 rounded-xl bg-white px-5 py-5 w-full;
+    }
+    .calendar-header {
+        @apply flex flex-col md:flex-row justify-between items-center w-full mb-6;
+    }
+    .primary-title_calendar {
+        @apply text-size-20 leading-[150%];
+    }
+    .calendar-controls {
+        @apply flex justify-between gap-2 mb-1
+    }
+
+
+
+}
+
+
+.vuecal__event {
+    @apply bg-secondary bg-opacity-20 rounded-tr-md rounded-br-md relative px-[10px] pt-3 pb-[14px] z-[2] transition-all ease-in-out duration-300
+    hover:bg-earth hover:bg-opacity-100 hover:!min-w-fit hover:!min-h-fit hover:!z-[5]
+    after:block after:w-[3px] after:bg-secondary after:rounded-tr-md after:rounded-br-md after:h-full after:absolute after:left-0 after:top-0 after:z-[1];
+}
+.vuecal__event-title {
+    @apply text-size-14 leading-[130%] text-secondary !text-left font-inter-medium;
+}
+.vuecal__event-sub-title {
+    @apply text-size-12 leading-[125%] text-secondary !text-left font-inter-medium mt-1;
+}
+.vuecal__event__profile-box {
+    @apply flex flex-row items-center justify-start w-full gap-[2px] mt-1;
+}
+.vuecal__event__profile-box__title {
+    @apply text-size-9 text-primary font-inter-medium;
+}
+.vuecal__event-action {
+    @apply flex flex-col gap-1 w-full items-center justify-center mt-[19px];
+}
+.vuecal__event-btn {
+    @apply !font-inter-bold !text-[10px] leading-[130%] bg-white !border-0 !py-[3px] !px-[7px] !min-w-[76px] !rounded-[10px] [&>*:nth-child(odd)]:text-secondary;
+}
+.vuecal__event-time {
+
+}

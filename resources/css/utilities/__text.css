@@ -1,0 +1,35 @@
+@layer base {
+    .text-size-60 {
+        @apply text-[40px] lg:text-[50px] xl:text-[60px] leading-[120%];
+    }
+    .text-size-32 {
+        @apply text-[28px] md:text-[32px] leading-[130%];
+    }
+    .text-size-24 {
+        @apply text-2xl;
+    }
+    .text-size-20 {
+        @apply text-xl leading-normal;
+    }
+    .text-size-18 {
+        @apply text-lg;
+    }
+    .text-size-16 {
+        @apply text-base leading-[200%];
+    }
+    .text-size-14 {
+        @apply text-sm leading-[170%];
+    }
+    .text-size-13 {
+        @apply text-[13px] leading-[150%];
+    }
+    .text-size-12 {
+        @apply text-xs leading-[150%];
+    }
+    .text-size-10 {
+        @apply text-[10px] leading-[150%];
+    }
+    .text-size-9 {
+        @apply text-[9px] leading-[150%];
+    }
+}

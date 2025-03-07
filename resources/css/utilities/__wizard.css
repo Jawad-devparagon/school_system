@@ -1,0 +1,17 @@
+@layer base {
+    .wizard-con {
+        @apply flex flex-col w-full h-auto;
+    }
+    .wizard-box {
+        @apply flex flex-col w-full h-auto;
+    }
+    .wizard-header {
+        @apply block w-full h-auto text-size-32 capitalize font-inter-bold text-primary mb-[10px];
+    }
+    .wizard-content {
+        @apply block w-full h-auto;
+    }
+    .wizard-action {
+        @apply block w-full h-auto;
+    }
+}

@@ -1,0 +1,31 @@
+@import "client/pages/general.css";
+@import "client/utilities/utilities.css";
+@import "client/form/form.css";
+@import "client/nav/nav.css";
+@import "client/panel/panel.css";
+@import "client/panel/search.css";
+@import "client/components/components.css";
+@import "client/pages/homepage.css";
+@import "client/pages/aboutus.css";
+@import "client/pages/fintechCareerCenter.css";
+@import "client/pages/skilling.css";
+@import "client/pages/mentorship.css";
+@import "client/pages/communityHub.css";
+@import "client/pages/jobs.css";
+@import "client/pages/employersHub.css";
+@import "client/pages/events.css";
+@import "client/pages/leadership.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadow-primary-200-50 {
+    box-shadow: 5px 10px 50px 0 rgba(117, 120, 128, 20%);
+}
+
+@layer components {
+    .hide-selected-items .vs__selected-options .vs__selected {
+        display: none !important;
+    }
+}

@@ -1,0 +1,24 @@
+@layer components {
+    .radio-con {
+        @apply flex flex-wrap sm:flex-row gap-5;
+    }
+    .radio-box {
+        @apply flex w-full max-w-fit md:max-w-[200px] h-auto min-h-[48px];
+    }
+    .radio-item {
+        @apply flex items-center gap-2 w-full text-size-14 leading-[1] bg-white border border-primary-250 rounded-[10px] p-[14px] cursor-pointer radio-circle peer-checked:text-secondary peer-checked:bg-secondary  peer-checked:bg-opacity-10 peer-checked:border-secondary transition duration-300 ease-in-out;
+    }
+    .radio-circle {
+        @apply before:flex before:w-[16px] before:h-[16px] before:rounded-full before:border-2 before:border-primary-600 before:peer-checked:border-secondary peer-checked:before:border-4;
+    }
+
+    .radio-item-plain {
+        @apply flex items-center gap-2 w-full text-size-14 leading-[1] bg-white border border-primary-250 rounded-[10px] p-[14px] cursor-pointer peer-checked:text-secondary peer-checked:bg-secondary peer-checked:bg-opacity-10 peer-checked:border-secondary transition duration-300 ease-in-out;
+    }
+    .radio-item-plain__secondary {
+        @apply flex-col items-start gap-1 font-inter-bold text-primary text-opacity-50 py-[10px] px-[17px] peer-checked:text-secondary
+    }
+    .radio-box__sub-label {
+        @apply text-size-12 leading-[150%] font-inter text-opacity-50;
+    }
+}

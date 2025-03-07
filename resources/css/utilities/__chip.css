@@ -1,0 +1,51 @@
+@layer base {
+    .chip-box {
+        @apply flex flex-wrap sm:flex-row gap-[8px];
+    }
+    .chip-item {
+        @apply py-[2px] px-[8px] font-inter-medium relative;
+    }
+    .chip-sm {
+        @apply text-size-12 leading-[150%];
+    }
+    .chip-border {
+        @apply text-primary bg-primary-250 border border-primary-600 border-opacity-50
+    }
+    .chip-border-none {
+        @apply !border-0
+    }
+    .chip-rounded-sm {
+        @apply rounded-[6px]
+    }
+    .chip-rounded {
+        @apply rounded-[30px]
+    }
+    .chip-cross-icon {
+        @apply flex text-primary text-opacity-60 border-opacity-50 w-fit h-fit absolute top-0 bottom-0 my-auto right-[4px] cursor-pointer
+    }
+    .chip-primary-600 {
+        @apply text-primary text-opacity-60 bg-primary-600 bg-opacity-10 border border-primary-600 border-opacity-10
+    }
+    .chip-border-primary-600 {
+        @apply text-primary text-opacity-60 bg-white border border-primary-250
+    }
+    .chip-success {
+        @apply text-success-200 bg-success-150 border border-success-150
+    }
+
+    .chip-rejected {
+        @apply text-red-500 bg-red-100 border border-red-200;
+    }
+
+    .chip-pending {
+        @apply text-yellow-400 bg-yellow-100 border border-yellow-200;
+    }
+
+    .chip-primary-light {
+        @apply text-primary text-opacity-60 bg-primary-120 border border-primary-120
+    }
+
+    .select-chip-item {
+        @apply pl-[8px] pr-[22px];
+    }
+}

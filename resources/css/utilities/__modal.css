@@ -1,0 +1,71 @@
+@layer base {
+    .modal {
+        @apply flex flex-col items-center justify-center fixed z-50 bg-transparent w-auto h-auto max-h-screen top-0 bottom-0 left-0 right-0 m-auto;
+    }
+    .modal-wrapper {
+        @apply flex flex-col border-4 border-primary-250 border-opacity-70 bg-white max-h-[95%];
+    }
+
+    .modal-xs {
+        @apply max-w-[260px] w-full;
+    }
+
+    .modal-sm {
+        @apply max-w-[520px] w-full;
+    }
+
+    .modal-md {
+        @apply max-w-[850px] w-full;
+    }
+
+    .modal-lg {
+        @apply max-w-[1024px] w-full;
+    }
+
+    .modal-rounded-sm {
+        @apply rounded-[10px]
+    }
+
+    .modal-shadow-sm {
+        box-shadow: 0 4px 40px 0 rgba(150, 160, 181, 20%);
+    }
+
+    .modal-header {
+        @apply flex justify-between items-center relative;
+    }
+    .modal-header_primary {
+        @apply p-6 bg-primary-250 min-h-16 rounded-tl-[10px] rounded-tr-[10px]
+    }
+
+    .modal-header-title {
+        @apply text-size-20 font-inter-bold text-primary;
+    }
+    .modal-header-subtitle {
+        @apply block w-full text-size-14 font-inter text-primary text-opacity-60;
+    }
+
+    .modal-close {
+        @apply flex items-center justify-center cursor-pointer w-5 h-5;
+    }
+    .modal-close-plain {
+        @apply absolute -top-3 -right-3 bg-primary bg-opacity-60 p-2 w-8 h-8 rounded-full z-10
+    }
+
+    .modal-content {
+        @apply block w-full p-6 h-auto max-h-full overflow-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-secondary [&::-webkit-scrollbar-track]:bg-opacity-20 [&::-webkit-scrollbar-thumb]:bg-secondary;
+    }
+
+    .modal-action {
+        @apply flex flex-wrap items-center p-6 bg-white rounded-bl-[10px] rounded-br-[10px];
+    }
+
+    .modal-action button,
+    .modal-action a {
+
+        @apply min-w-[156px] text-size-16 leading-[120%] font-inter-bold
+    }
+
+    .modal-overlay {
+        @apply flex w-screen h-screen fixed z-40 bg-primary bg-opacity-40 backdrop-blur top-0 left-0 right-0 bottom-0 m-auto;
+    }
+}

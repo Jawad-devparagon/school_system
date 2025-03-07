@@ -1,0 +1,24 @@
+@layer base {
+    .breadcrumb-con {
+        @apply w-full
+    }
+    .breadcrumb-box {
+        @apply flex flex-col md:flex-row items-start w-full z-10 relative
+    }
+    .breadcrumb-links {
+        @apply flex flex-wrap items-center w-full gap-[14px]
+    }
+    .breadcrumb-item {
+        @apply flex flex-row text-size-20 leading-[150%] font-inter-bold text-primary text-opacity-60 gap-[14px]
+    }
+    .breadcrumb-item-icon {
+        @apply flex items-center justify-center w-[30px] h-[30px] border border-primary border-opacity-60 rounded-full
+    }
+    .breadcrumb-buttons {
+        @apply flex flex-col md:flex-row justify-end w-full gap-[14px]
+    }
+    .breadcrumb-button {
+        @apply flex flex-col md:flex-row justify-end w-full gap-[14px]
+    }
+
+}

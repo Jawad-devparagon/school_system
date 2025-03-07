@@ -1,0 +1,27 @@
+@layer components {
+    .select-option-item {
+        @apply flex flex-row items-center gap-[10px] text-size-16 leading-[150%] font-arial text-primary text-opacity-60
+    }
+}
+
+.vs__dropdown-toggle {
+    @apply w-full text-[14px] leading-[1] text-primary text-opacity-60 !border !border-primary-250 !rounded-[10px] !py-[9px] !px-[5px]
+}
+.vs__open-indicator {
+    @apply !hidden;
+}
+.vs__dropdown-menu {
+    @apply !border-none !rounded-b-[10px];
+}
+.vs__dropdown-option {
+    @apply text-[16px] text-primary text-opacity-60 font-arial py-[7px] px-[14px] capitalize;
+}
+.vs__actions {
+    @apply flex w-[12px] h-[6px] bg-[url('../../assets/images/chevron.svg')] bg-no-repeat bg-contain my-auto mr-[14px];
+}
+.vs__clear {
+    @apply !hidden
+}
+.vs__dropdown-option--highlight {
+    @apply !bg-secondary !bg-opacity-10 !text-primary !text-opacity-60;
+}

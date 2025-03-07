@@ -1,0 +1,40 @@
+@layer base {
+
+    .subscription-plan__card-btn {
+        @apply font-inter-bold uppercase w-fit px-[10px] py-[9px];
+    }
+    .subscription-plan__subscription-detail {
+
+    }
+    .subscription-detail__plan {
+        @apply flex justify-between items-center w-full;
+    }
+    .subscription-detail__plan__text {
+        @apply text-size-14 leading-4 font-inter-medium text-primary text-opacity-70;
+    }
+    .subscription-detail__plan__price {
+        @apply text-size-24 leading-6 font-inter-medium text-primary;
+    }
+    .subscription-detail__plan__btn {
+        @apply text-size-14;
+    }
+    .subscription-detail__text {
+        @apply text-size-12 font-inter-medium text-primary text-opacity-75 mt-2
+    }
+
+
+
+    .payment-details__method-box {
+        @apply flex flex-row items-center gap-[26px] w-full
+    }
+    .method-box__icon {
+        @apply border border-primary-250 rounded-[10px];
+    }
+    .method-box__text {
+        @apply text-size-16 leading-5 font-inter-semi-bold text-primary
+    }
+    .method-box__text__span {
+        @apply block text-size-14 font-inter-medium text-primary text-opacity-80
+    }
+
+}
