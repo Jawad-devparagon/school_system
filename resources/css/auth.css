@@ -1,0 +1,55 @@
+
+
+/** Auth pages Styles */
+
+@layer components {
+    .auth-sec {
+        @apply bg-white
+    }
+    .auth-box {
+        @apply flex flex-col lg:flex-row min-h-screen gap-[40px] 2xl:gap-[80px] p-[20px] relative;
+    }
+    .auth-column {
+        @apply flex self-stretch;
+    }
+    .auth-left-column {
+        @apply flex-col items-start w-full max-w-full lg:max-w-[400px] xl:max-w-[550px] 2xl:max-w-[620px] py-[60px] pl-[20px] lg:pl-[40px] 2xl:pl-[60px] pr-[20px] md:pr-[50px] rounded-[24px] bg-primary bg-[url('../assets/images/auth-background.svg')] bg-no-repeat bg-right-bottom;
+        background-size: 431px 441px;
+        @media (max-width: 1279px) { background-size: 331px 341px; }
+    }
+    .auth-right-column {
+        @apply flex-col justify-center items-center w-full pr-0 2xl:pr-[60px] mb-[100px] lg:mb-0  overflow-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-secondary [&::-webkit-scrollbar-track]:bg-opacity-20 [&::-webkit-scrollbar-thumb]:bg-secondary;
+    }
+    .auth-column-content {
+        @apply flex flex-col w-full mt-[60px] md:mt-[111px];
+    }
+    .auth-logo-box {
+        @apply flex w-fit;
+    }
+    .auth-column-content-title {
+        @apply text-size-60 text-secondary font-arial-bold mb-[32px];
+        span {
+            @apply text-white;
+        }
+    }
+    .auth-column-content-detail {
+        @apply text-size-14 tracking-wide text-white text-opacity-70 font-arial max-w-[482px];
+        span {
+            @apply text-white font-arial-bold;
+        }
+    }
+
+    .auth-column-form-box {
+        @apply flex flex-col w-full max-w-[640px] mx-auto relative;
+    }
+    .auth-column-form-title {
+        @apply text-size-32 capitalize font-inter-bold text-primary mb-[10px];
+    }
+    .auth-column-form-sub-title {
+        @apply text-size-16 capitalize font-inter mb-[30px];
+    }
+
+    .opt-verify-box {
+        @apply flex flex-row gap-[10px] mb-[10px];
+    }
+}

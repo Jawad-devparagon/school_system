@@ -1,0 +1,54 @@
+
+@import '__button.css';
+@import '__text.css';
+@import '__divider.css';
+@import '__alert.css';
+@import '__dropdown.css';
+@import '__steps.css';
+@import '__chip.css';
+@import '__tab.css';
+@import '__card.css';
+@import '__modal.css';
+@import '__wizard.css';
+@import '__breadcrumb.css';
+
+@layer base {
+
+    /** Container Styles */
+    .container {
+        @apply lg:max-w-[1440px] px-[20px] mx-auto;
+    }
+    .container-lg {
+        @apply lg:max-w-[1530px] px-[15px] mx-auto;
+    }
+    .anchor {
+        @apply text-size-16 font-inter-bold
+    }
+    .anchor-primary {
+        @apply text-primary
+    }
+    .anchor-secondary {
+        @apply text-secondary
+    }
+    .anchor-underline {
+        @apply underline
+    }
+
+
+    /** Rows, Cols Styles */
+    .row {
+        @apply flex flex-col md:flex-row md:gap-[20px] items-start;
+    }
+    .col {
+        @apply flex w-full h-auto items-start;
+    }
+
+    .primary-title {
+        @apply text-primary text-size-13 font-inter-medium tracking-wide mb-[10px];
+    }
+    .primary-content {
+        @apply text-primary text-opacity-60 text-size-13 font-inter-medium mb-4;
+    }
+
+
+}

@@ -1,0 +1,31 @@
+@layer components {
+    .dragdrop-con {
+        @apply flex w-full;
+    }
+    .dragdrop-box {
+        @apply flex flex-col items-center justify-center gap-[24px] w-full h-[160px] cursor-pointer bg-secondary bg-opacity-5 p-2 transition-all duration-300 ease-in-out
+    }
+    .dragdrop-border {
+        @apply border-2 border-secondary border-opacity-35 hover:border-secondary rounded-[10px];
+    }
+    .dragdrop-border-dashed {
+        @apply border-dashed;
+    }
+
+    .dragdrop-icon {
+        @apply flex justify-center items-center w-[48px] h-[48px] rounded-full bg-secondary overflow-hidden;
+    }
+    .dragdrop-text {
+        @apply text-size-20 leading-[140%] font-inter-medium text-primary;
+    }
+
+    .dragdrop-file-preview {
+        @apply flex justify-between items-center;
+    }
+    .dragdrop-file-preview-text {
+        @apply text-size-14 leading-[140%] font-inter text-primary text-opacity-80;
+    }
+    .dragdrop-file-preview-text-span {
+        @apply font-inter-bold;
+    }
+}

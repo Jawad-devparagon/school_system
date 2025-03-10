@@ -1,3 +1,270 @@
+
+@import 'utilities/utilities.css';
+@import 'form/form.css';
+@import 'nav/__side-nav.css';
+@import 'auth.css';
+@import 'package.css';
+@import 'panel/panel.css';
+@import 'panel/search.css';
+@import 'subscription.css';
+@import 'datatables.net-dt';
+@import 'components/components.css';
+
+@import 'pages/dashboard.css';
+@import 'pages/__profle.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    @font-face {
+        font-family: 'Inter Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Regular'), url('../assets/fonts/inter-webfont/Inter-Regular.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Italic'), url('../assets/fonts/inter-webfont/Inter-Italic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Thin BETA';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Thin BETA'), url('../assets/fonts/inter-webfont/Inter-Thin-BETA.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Thin Italic BETA';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Thin Italic BETA'), url('../assets/fonts/inter-webfont/Inter-ThinItalic-BETA.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Extra Light BETA';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Extra Light BETA'), url('../assets/fonts/inter-webfont/Inter-ExtraLight-BETA.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Extra Light Italic BETA';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Extra Light Italic BETA'), url('../assets/fonts/inter-webfont/Inter-ExtraLightItalic-BETA.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Light BETA';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Light BETA'), url('../assets/fonts/inter-webfont/Inter-Light-BETA.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Light Italic BETA';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Light Italic BETA'), url('../assets/fonts/inter-webfont/Inter-LightItalic-BETA.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Medium';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Medium'), url('../assets/fonts/inter-webfont/Inter-Medium.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Medium Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Medium Italic'), url('../assets/fonts/inter-webfont/Inter-MediumItalic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Semi Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Semi Bold'), url('../assets/fonts/inter-webfont/Inter-SemiBold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Semi Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Semi Bold Italic'), url('../assets/fonts/inter-webfont/Inter-SemiBoldItalic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Bold'), url('../assets/fonts/inter-webfont/Inter-Bold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Bold Italic'), url('../assets/fonts/inter-webfont/Inter-BoldItalic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Extra Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Extra Bold'), url('../assets/fonts/inter-webfont/Inter-ExtraBold.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Extra Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Extra Bold Italic'), url('../assets/fonts/inter-webfont/Inter-ExtraBoldItalic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Black';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Black'), url('../assets/fonts/inter-webfont/Inter-Black.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Inter Black Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inter Black Italic'), url('../assets/fonts/inter-webfont/Inter-BlackItalic.woff') format('woff');
+    }
+
+    /** Arial font family */
+    @font-face {
+        font-family: 'Arial Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Regular'), url('../assets/fonts/arial-webfont/ARIAL.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Narrow';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Narrow'), url('../assets/fonts/arial-webfont/ARIALN.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Italic'), url('../assets/fonts/arial-webfont/ARIALI 1.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Italic'), url('../assets/fonts/arial-webfont/ARIALI.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Narrow Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Narrow Italic'), url('../assets/fonts/arial-webfont/ARIALNI.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Medium';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Medium'), url('../assets/fonts/arial-webfont/ArialMdm.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Medium Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Medium Italic'), url('../assets/fonts/arial-webfont/ArialMdmItl.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Bold'), url('../assets/fonts/arial-webfont/ARIALBD 1.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Bold'), url('../assets/fonts/arial-webfont/ARIALBD.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Narrow Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Narrow Bold'), url('../assets/fonts/arial-webfont/ARIALNB.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Bold Italic'), url('../assets/fonts/arial-webfont/ARIALBI 1.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Bold Italic'), url('../assets/fonts/arial-webfont/ARIALBI.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Narrow Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Narrow Bold Italic'), url('../assets/fonts/arial-webfont/ARIALNBI.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Black';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Black'), url('../assets/fonts/arial-webfont/ARIBLK.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Black Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Black Italic'), url('../assets/fonts/arial-webfont/ARIALBLACKITALIC.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Light Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Light Regular'), url('../assets/fonts/arial-webfont/ARIALLGT.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial CE Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial CE Regular'), url('../assets/fonts/arial-webfont/ArialCE.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial CE MT Black Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial CE MT Black Regular'), url('../assets/fonts/arial-webfont/ArialCEMTBlack.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial CE Bold';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial CE Bold'), url('../assets/fonts/arial-webfont/arialceb.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial Light Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial Light Italic'), url('../assets/fonts/arial-webfont/ARIALLGTITL.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial CE Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial CE Italic'), url('../assets/fonts/arial-webfont/ArialCEItalic.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'Arial CE Bold Italic';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Arial CE Bold Italic'), url('../assets/fonts/arial-webfont/ArialCEBoldItalic.woff') format('woff');
+    }
+
+
+    .hide-selected-items .vs__selected-options .vs__selected {
+        display: none !important;
+    }
+
+}

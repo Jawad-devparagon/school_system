@@ -1,0 +1,60 @@
+@layer components {
+    .form-group {
+        @apply flex flex-col w-full gap-[10px] mb-[20px] md:mb-[30px];
+    }
+    .form-label {
+        @apply text-[16px] leading-[150%] font-inter-medium text-primary;
+    }
+    .form-input {
+        @apply w-full text-size-14 leading-[1] text-primary text-opacity-60 font-arial placeholder:text-primary placeholder:text-opacity-60 border border-primary-250 rounded-[10px] py-[15px] px-[14px] transition duration-300 ease-in-out focus:shadow-md focus-visible:!outline-0 focus:!outline-0;
+    }
+    .form-signature {
+        @apply w-full border border-primary-250 rounded-[10px] transition duration-300 ease-in-out focus:shadow-md focus-visible:!outline-0 focus:!outline-0;
+    }
+    .otp-input {
+        @apply w-full max-w-[152.5px] text-size-24 leading-[32%] text-primary text-center placeholder:text-primary py-[10px] sm:py-[24px] px-[8px] focus-visible:!outline-1 focus-visible:!outline-secondary;
+    }
+    .input-shadow {
+        box-shadow: 0 1px 2px rgba(10, 13, 20, 3%);
+    }
+    .input-error {
+        @apply text-size-14 text-danger font-arial;
+    }
+    .password-show {
+        @apply w-[20px] h-[20px] absolute right-[10px] top-0 bottom-0 my-auto cursor-pointer;
+    }
+    .input-card {
+        @apply pl-[52px]
+    }
+    .input-icon {
+        @apply flex absolute w-fit h-fit my-auto top-0 bottom-0 left-[12px]
+    }
+    .input-card-icon {
+        @apply py-[6px] px-[5px] rounded-[1.33px] border border-primary border-opacity-10
+    }
+    .input-danger {
+        @apply border-danger;
+    }
+
+
+
+    .form-group.form-group_narrow {
+        @apply flex flex-col w-full gap-1 mb-[15px];
+    }
+    .form-group_narrow .form-label {
+        @apply text-[14px] leading-[130%] font-inter-medium text-primary;
+    }
+    .form-group_narrow .form-input {
+        @apply leading-[130%] font-inter placeholder:text-primary placeholder:text-opacity-60 border border-primary-250 py-[13px] px-[16px];
+    }
+
+    .form-group.form-group_readonly {
+        @apply flex flex-col w-full gap-1 mb-[20px] md:mb-[30px];
+    }
+    .form-group_readonly .form-label {
+        @apply text-[14px] leading-[130%] font-inter-medium text-primary text-opacity-60;
+    }
+    .form-group_readonly .form-input {
+        @apply w-full text-size-14 leading-[130%] text-primary font-inter-medium placeholder:text-primary border-0 py-0 px-0 rounded-none focus:shadow-none focus-visible:!outline-0 focus:!outline-0;
+    }
+}

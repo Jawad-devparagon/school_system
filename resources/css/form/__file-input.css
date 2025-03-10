@@ -1,0 +1,11 @@
+@layer components {
+    .form-file-group {
+        @apply flex flex-row items-center gap-[16px] relative;
+    }
+    .form-file {
+        @apply form-input border-0 p-0 rounded-none file:mr-[12px] file:py-[10px] file:px-[16px] file:rounded-[8px] file:border file:border-primary file:bg-transparent file:text-black-400 file:text-size-12 file:tracking-wide file:font-inter-bold placeholder:text-primary text-opacity-60 focus-visible:outline-none  disabled:cursor-not-allowed disabled:opacity-50;
+    }
+    .uploaded-file-box {
+        @apply flex items-center justify-center w-[48px] h-[48px] rounded-full overflow-hidden;
+    }
+}

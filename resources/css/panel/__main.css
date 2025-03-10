@@ -1,0 +1,5 @@
+@layer components {
+    .panel-main {
+        @apply p-4 md:p-5 xl:p-[40px]
+    }
+}

@@ -1,0 +1,36 @@
+
+div.dt-container div.dt-layout-row {
+    @apply !m-0;
+}
+table.dataTable.order-column > tbody tr > .sorting_1,
+table.dataTable.order-column > tbody tr > .sorting_2,
+table.dataTable.order-column > tbody tr > .sorting_3,
+table.dataTable.display > tbody tr > .sorting_1,
+table.dataTable.display > tbody tr > .sorting_2,
+table.dataTable.display > tbody tr > .sorting_3,
+table.dataTable.stripe > tbody > tr:nth-child(odd) > *,
+table.dataTable.display > tbody > tr:nth-child(odd) > * {
+    @apply !shadow-none;
+}
+
+table.dataTable thead > tr > th.dt-orderable-asc,
+table.dataTable thead > tr > th.dt-orderable-desc,
+table.dataTable thead > tr > th.dt-ordering-asc,
+table.dataTable thead > tr > th.dt-ordering-desc,
+table.dataTable thead > tr > td.dt-orderable-asc,
+table.dataTable thead > tr > td.dt-orderable-desc,
+table.dataTable thead > tr > td.dt-ordering-asc,
+table.dataTable thead > tr > td.dt-ordering-desc,
+table.dataTable > thead > tr > th {
+    @apply text-sm font-inter tracking-wide text-primary text-opacity-80 !bg-primary !bg-opacity-10;
+}
+
+table.dataTable > thead > tr > th,
+table.dataTable > thead > tr > td {
+    @apply !border-b !border-primary-250 !py-2 !px-3;
+}
+table.dataTable > tbody > tr > th,
+table.dataTable > tbody > tr > td {
+    @apply text-sm font-inter text-primary !border-b !border-primary-250 !py-3.5 !px-3;
+}
+

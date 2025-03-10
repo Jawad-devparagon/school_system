@@ -1,10 +1,10 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
+import Button from '@/Components/Theme/Utilities/Button.vue';
+import Input from '@/Components/Theme/Utilities/Input.vue';
+import Select from '@/Components/Theme/Utilities/Select.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import Anchor from "@/Components/Theme/Utilities/Anchor.vue";
 
 const form = useForm({
   name: '',
@@ -27,8 +27,7 @@ const props = defineProps({
   }
 });
 const submit = () => {
-  form.post(route('teacher.register'), {
-    onFinish: () => form.reset('password', 'password_confirmation'),
+  form.post(route('teacher.register.store'), {
   });
 };
 </script>
@@ -39,10 +38,10 @@ const submit = () => {
 
     <form @submit.prevent="submit">
       <div>
-        <InputLabel for="name" value="Name" />
 
-        <TextInput
+        <Input
             id="name"
+            label="Name"
             type="text"
             class="mt-1 block w-full"
             v-model="form.name"
@@ -50,155 +49,117 @@ const submit = () => {
             autocomplete="name"
         />
 
-        <InputError class="mt-2" :message="form.errors.name" />
+        <span v-if="form.errors.name" class="mt-2 text-red-500">{{form.errors.name}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel for="email" value="Email" />
 
-        <TextInput
+        <Input
             id="email"
+            label="Email"
             type="email"
             class="mt-1 block w-full"
             v-model="form.email"
             autocomplete="username"
         />
 
-        <InputError class="mt-2" :message="form.errors.email" />
+        <span v-if="form.errors.email" class="mt-2 text-red-500">{{form.errors.email}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password" value="Password" />
 
-        <TextInput
+        <Input
             id="password"
+            label="Password"
             type="password"
             class="mt-1 block w-full"
             v-model="form.password"
             autocomplete="new-password"
         />
 
-        <InputError class="mt-2" :message="form.errors.password" />
+        <span v-if="form.errors.password" class="mt-2 text-red-500">{{form.errors.password}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel
-            for="password_confirmation"
-            value="Confirm Password"
-        />
 
-        <TextInput
+        <Input
             id="password_confirmation"
+            label="Confirm Password"
             type="password"
             class="mt-1 block w-full"
             v-model="form.password_confirmation"
             autocomplete="new-password"
         />
 
-        <InputError
-            class="mt-2"
-            :message="form.errors.password_confirmation"
-        />
+        <span v-if="form.errors.password_confirmation" class="mt-2 text-red-500">{{form.errors.password_confirmation}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel
-            for="country_id"
-            value="Country"
-        />
-        <v-select :options="countries" :reduce="country => country.value" v-model="form.country_id" label="label"></v-select>
-
-        <InputError
-            class="mt-2"
-            :message="form.errors.country_id"
-        />
+        <Select :options="countries" v-model="form.country_id" :label="'Country'" />
+        <span v-if="form.errors.country_id" class="mt-2 text-red-500">{{form.errors.country_id}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel
-            for="address"
-            value="Address"
-        />
 
-        <TextInput
+        <Input
             id="address"
+            label="Address"
             type="text"
             class="mt-1 block w-full"
             v-model="form.address"
         />
 
-        <InputError
-            class="mt-2"
-            :message="form.errors.address"
-        />
+        <span v-if="form.errors.address" class="mt-2 text-red-500">{{form.errors.address}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel
-            for="mobile_no"
-            value="Mobile No"
-        />
 
-        <TextInput
+        <Input
             id="mobile_no"
-            type="number"
+            label="Mobile No"
+            type="tel"
             class="mt-1 block w-full"
             v-model="form.mobile_no"
         />
 
-        <InputError
-            class="mt-2"
-            :message="form.errors.mobile_no"
-        />
+        <span v-if="form.errors.mobile_no" class="mt-2 text-red-500">{{form.errors.mobile_no}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel
-            for="dob"
-            value="Date of Birth"
-        />
 
-        <TextInput
+        <Input
             id="dob"
+            label="DOB"
             type="date"
             class="mt-1 block w-full"
             v-model="form.dob"
         />
 
-        <InputError
-            class="mt-2"
-            :message="form.errors.dob"
-        />
+        <span v-if="form.errors.dob" class="mt-2 text-red-500">{{form.errors.dob}}</span>
       </div>
 
       <div class="mt-4">
-        <InputLabel
-            for="gender"
-            value="Gender"
-        />
-        <v-select :options="genders" :reduce="gender => gender.value" v-model="form.gender" label="label"></v-select>
 
-        <InputError
-            class="mt-2"
-            :message="form.errors.gender"
-        />
+        <Select :options="genders" v-model="form.gender" label="Gender" />
+
+        <span v-if="form.errors.gender" class="mt-2 text-red-500">{{form.errors.gender}}</span>
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <Link
+        <Anchor
             :href="route('login')"
-            class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            :class="'rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'"
         >
           Already registered?
-        </Link>
+        </Anchor>
 
-        <PrimaryButton
+        <Button
             class="ms-4"
             :class="{ 'opacity-25': form.processing }"
             :disabled="form.processing"
         >
           Register
-        </PrimaryButton>
+        </Button>
       </div>
     </form>
   </GuestLayout>

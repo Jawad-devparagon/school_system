@@ -1,0 +1,38 @@
+@layer base {
+    .btn {
+        @apply flex flex-row items-center justify-center border transition duration-300 ease-in-out;
+    }
+    .btn-lg {
+        @apply text-size-16 leading-[120%] gap-[10px] py-[19.5px] px-[20.5px] rounded-[17px]
+    }
+    .btn-md {
+        @apply text-size-14 leading-[150%] gap-[10px] py-[13.5px] px-[15px] rounded-[10px]
+    }
+    .btn-sm {
+        @apply text-size-12 leading-[140%] gap-[4px] py-[7px] px-[10px] rounded-[10px]
+    }
+    .btn-xs {
+        @apply text-size-10 leading-[100%] gap-[4px] py-[3px] px-[5px] rounded-[5px]
+    }
+    .btn-primary {
+        @apply text-white bg-primary border-primary hover:bg-secondary hover:border-secondary;
+    }
+    .btn-border-primary {
+        @apply text-primary bg-white border-primary hover:bg-white hover:text-secondary hover:border-secondary;
+    }
+    .btn-secondary {
+        @apply text-primary bg-secondary border-secondary hover:text-secondary hover:bg-transparent hover:border-secondary;
+    }
+    .btn-success {
+        @apply text-primary bg-success border-success hover:bg-transparent hover:border-success;
+    }
+    .btn-warning {
+        @apply text-primary bg-warning border-warning hover:bg-transparent hover:border-warning;
+    }
+    .btn-accent {
+        @apply text-primary bg-primary-250 bg-opacity-30 border-primary-250 hover:bg-secondary hover:bg-opacity-30 hover:border-secondary;
+    }
+    .btn-white {
+        @apply text-primary bg-white border-primary-600 border-opacity-25 hover:bg-secondary hover:bg-opacity-30 hover:border-secondary;
+    }
+}
