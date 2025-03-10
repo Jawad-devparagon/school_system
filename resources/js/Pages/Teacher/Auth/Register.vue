@@ -27,7 +27,7 @@ const props = defineProps({
   }
 });
 const submit = () => {
-  form.post(route('teacher.register'), {
+  form.post(route('teacher.register.store'), {
     onFinish: () => form.reset('password', 'password_confirmation'),
   });
 };
@@ -41,10 +41,10 @@ const submit = () => {
       <div>
 
         <Input
-            :id="'name'"
-            :label="'Name'"
-            :type="'text'"
-            :class="'mt-1 block w-full'"
+            id="name"
+            label="Name"
+            type="text"
+            class="mt-1 block w-full"
             v-model="form.name"
             autofocus
             autocomplete="name"
@@ -56,10 +56,10 @@ const submit = () => {
       <div class="mt-4">
 
         <Input
-            :id="'email'"
-            :label="'Email'"
-            :type="'email'"
-            :class="'mt-1 block w-full'"
+            id="email"
+            label="Email"
+            type="email"
+            class="mt-1 block w-full"
             v-model="form.email"
             autocomplete="username"
         />
@@ -70,10 +70,10 @@ const submit = () => {
       <div class="mt-4">
 
         <Input
-            :id="'password'"
-            :label="'Password'"
-            :type="'password'"
-            :class="'mt-1 block w-full'"
+            id="password"
+            label="Password"
+            type="password"
+            class="mt-1 block w-full"
             v-model="form.password"
             autocomplete="new-password"
         />
@@ -84,10 +84,10 @@ const submit = () => {
       <div class="mt-4">
 
         <Input
-            :id="'password_confirmation'"
-            :label="'Confirm Password'"
-            :type="'password'"
-            :class="'mt-1 block w-full'"
+            id="password_confirmation"
+            label="Confirm Password"
+            type="password"
+            class="mt-1 block w-full"
             v-model="form.password_confirmation"
             autocomplete="new-password"
         />
@@ -103,10 +103,10 @@ const submit = () => {
       <div class="mt-4">
 
         <Input
-            :id="'address'"
-            :label="'Address'"
-            :type="'text'"
-            :class="'mt-1 block w-full'"
+            id="address"
+            label="Address"
+            type="text"
+            class="mt-1 block w-full"
             v-model="form.address"
         />
 
@@ -116,10 +116,10 @@ const submit = () => {
       <div class="mt-4">
 
         <Input
-            :id="'mobile_no'"
-            :label="'Mobile No'"
-            :type="'number'"
-            :class="'mt-1 block w-full'"
+            id="mobile_no"
+            label="Mobile No"
+            type="number"
+            class="mt-1 block w-full"
             v-model="form.mobile_no"
         />
 
@@ -129,10 +129,10 @@ const submit = () => {
       <div class="mt-4">
 
         <Input
-            :id="'dob'"
-            :label="'DOB'"
-            :type="'date'"
-            :class="'mt-1 block w-full'"
+            id="dob"
+            label="DOB"
+            type="date"
+            class="mt-1 block w-full"
             v-model="form.dob"
         />
 
@@ -141,7 +141,7 @@ const submit = () => {
 
       <div class="mt-4">
 
-        <Select :options="genders" v-model="form.gender" :label="'Gender'" />
+        <Select :options="genders" v-model="form.gender" label="Gender" />
 
         <span v-if="form.errors.gender" class="mt-2 text-red-500">{{form.errors.gender}}</span>
       </div>

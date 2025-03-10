@@ -40,10 +40,10 @@ const submit = () => {
             <div>
 
                 <Input
-                    :id="'email'"
-                    :label="'Name'"
-                    :type="'email'"
-                    :class="'mt-1 block w-full'"
+                    id="email"
+                    label="Name"
+                    type="email"
+                    class="mt-1 block w-full"
                     v-model="form.email"
                     autofocus
                     autocomplete="username"
@@ -55,10 +55,10 @@ const submit = () => {
             <div class="mt-4">
 
                 <Input
-                    :id="'password'"
-                    :label="'Password'"
-                    :type="'password'"
-                    :class="'mt-1 block w-full'"
+                    id="password"
+                    label="Password"
+                    type="password"
+                    class="mt-1 block w-full"
                     v-model="form.password"
                     autocomplete="current-password"
                 />

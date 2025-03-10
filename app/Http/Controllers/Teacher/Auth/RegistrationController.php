@@ -34,6 +34,6 @@ class RegistrationController extends Controller
 
         Register::handle(RegistrationData::from($data));
 
-        return redirect(route('teacher.application'));
+        return redirect(route('teacher.application.create'));
     }
 }

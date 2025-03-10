@@ -16,7 +16,7 @@ const form = useForm({
   degrees: [],
 });
 const submit = () => {
-  form.post(route('teacher.application'), {
+  form.post(route('teacher.application.store'), {
   });
 };
 </script>
@@ -28,10 +28,10 @@ const submit = () => {
     <form @submit.prevent="submit">
       <div>
         <Input
-            :label="'Years of Experience'"
-            :id="'years_of_experience'"
-            :type="'number'"
-            :class="'mt-1 block w-full'"
+            label="Years of Experience"
+            id="years_of_experience"
+            type="number"
+            class="mt-1 block w-full"
             v-model="form.years_of_experience"
             autofocus
             autocomplete="years_of_experience"
@@ -41,7 +41,7 @@ const submit = () => {
 
       <div>
 
-        <Select :isMultiple="true" :options="degrees" v-model="form.degrees" :label="'Degrees'" />
+        <Select isMultiple="true" :options="degrees" v-model="form.degrees" label="Degrees" />
 
         <span class="mt-2 text-red-500 ">{{ form.errors.degrees }}</span>
       </div>

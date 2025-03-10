@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Teacher;
 
-use App\Actions\Teacher\Application\ApplicationCreate;
+use App\Actions\Teacher\Application\CreateApplication;
 use App\Data\Teacher\Application\ApplicationData;
-use App\Enums\TeacherApplicationStatusEnum;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Teacher\Application\CreateRequest;
+use App\Http\Requests\Teacher\Application\ApplicationRequest;
 use App\Models\Degree;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -22,12 +21,10 @@ class ApplicationController extends Controller
         ]);
     }
 
-    public function store(CreateRequest $request): RedirectResponse
+    public function store(ApplicationRequest $request): RedirectResponse
     {
         $data = $request->validated();
-        $data['user_id'] = Auth::id();
-        $data['status'] = TeacherApplicationStatusEnum::PENDING;
-        ApplicationCreate::handle(ApplicationData::from($data));
+        CreateApplication::handle(ApplicationData::from($data), Auth::user());
 
         return redirect('dashboard');
     }
