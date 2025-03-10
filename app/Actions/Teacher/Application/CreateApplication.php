@@ -10,14 +10,9 @@ class CreateApplication
 {
     public static function handle(ApplicationData $data, User $user): TeacherApplication
     {
-        $degrees = [];
-        if (property_exists($data, 'degrees')) {
-            $degrees = $data->degrees;
-            unset($data->degrees);
-        }
 
-        $teacherApplication = TeacherApplication::create(array_merge(['user_id' => $user->id], $data->toArray()));
-        $teacherApplication->settings()->set('ids', $degrees);
+        $teacherApplication = TeacherApplication::create(array_merge($data->toArray(), ['user_id' => $user->id, 'degrees' => null]));
+        $teacherApplication->settings()->set('ids', $data->degrees);
 
         return $teacherApplication;
     }
