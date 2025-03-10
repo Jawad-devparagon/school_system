@@ -117,7 +117,7 @@ const submit = () => {
         <Input
             id="mobile_no"
             label="Mobile No"
-            type="number"
+            type="tel"
             class="mt-1 block w-full"
             v-model="form.mobile_no"
         />
