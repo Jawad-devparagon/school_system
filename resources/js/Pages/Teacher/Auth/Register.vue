@@ -28,7 +28,6 @@ const props = defineProps({
 });
 const submit = () => {
   form.post(route('teacher.register.store'), {
-    onFinish: () => form.reset('password', 'password_confirmation'),
   });
 };
 </script>
