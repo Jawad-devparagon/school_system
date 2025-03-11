@@ -32,7 +32,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    public function applications(): HasMany
+    public function teacherApplications(): HasMany
     {
         return $this->hasMany(TeacherApplication::class);
     }
