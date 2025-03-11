@@ -12,4 +12,6 @@ Route::middleware('guest')->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('application', [ApplicationController::class, 'create'])->name('application.create');
     Route::post('application', [ApplicationController::class, 'store'])->name('application.store');
+    Route::get('application/{application}', [ApplicationController::class, 'show'])->name('application.show');
+
 });

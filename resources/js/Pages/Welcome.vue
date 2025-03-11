@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import Anchor from "../Components/Theme/Utilities/Anchor.vue";
 
 defineProps({
     canLogin: {
@@ -55,14 +56,23 @@ function handleImageError() {
                         </svg>
                     </div>
                     <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
+                      <template v-if="$page.props.auth.user">
                         <Link
-                            v-if="$page.props.auth.user"
                             :href="route('dashboard')"
                             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                         >
-                            Dashboard
+                          Dashboard
                         </Link>
 
+                        <Anchor
+                            :href="route('logout')"
+                            method="post"
+                            as="button"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        >
+                          Log Out
+                        </Anchor>
+                      </template>
                         <template v-else>
                             <Link
                                 :href="route('login')"

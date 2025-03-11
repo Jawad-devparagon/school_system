@@ -3,7 +3,7 @@ import GuestLayout from '@/Layouts/GuestLayout.vue';
 import Button from '@/Components/Theme/Utilities/Button.vue';
 import Input from '@/Components/Theme/Utilities/Input.vue';
 import Select from '@/Components/Theme/Utilities/Select.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, useForm } from '@inertiajs/vue3';
 import Anchor from "@/Components/Theme/Utilities/Anchor.vue";
 
 const form = useForm({
