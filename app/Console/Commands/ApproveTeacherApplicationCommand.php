@@ -15,8 +15,10 @@ class ApproveTeacherApplicationCommand extends Command
     public function handle()
     {
         $application = TeacherApplication::find($this->argument('application_id'));
-        $application->status = TeacherApplicationStatusEnum::APPROVED;
-        $application->update();
+
+        $application->update([
+            'status' => TeacherApplicationStatusEnum::APPROVED,
+        ]);
 
         $teacher = $application->user->teacher()->create([
             'years_of_experience' => $application->years_of_experience,
