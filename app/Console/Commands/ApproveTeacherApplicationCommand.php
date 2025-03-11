@@ -3,24 +3,22 @@
 namespace App\Console\Commands;
 
 use App\Enums\TeacherApplicationStatusEnum;
-use App\Models\Teacher;
 use App\Models\TeacherApplication;
 use Illuminate\Console\Command;
 
 class ApproveTeacherApplicationCommand extends Command
 {
-    protected $signature = 'approve:teacher-application';
+    protected $signature = 'approve:teacher-application {application_id}';
 
     protected $description = 'Approving Teacher Applications';
 
     public function handle()
     {
-        $application = TeacherApplication::find(12);
+        $application = TeacherApplication::find($this->argument('application_id'));
         $application->status = TeacherApplicationStatusEnum::APPROVED;
-        $application->save();
+        $application->update();
 
-        $teacher = Teacher::create([
-            'user_id' => $application->user_id,
+        $teacher = $application->user->teacher()->create([
             'years_of_experience' => $application->years_of_experience,
         ]);
 
