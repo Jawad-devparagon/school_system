@@ -7,7 +7,6 @@ use App\Data\Teacher\Application\ApplicationData;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\Application\ApplicationRequest;
 use App\Models\Degree;
-use App\Models\TeacherApplication;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -26,13 +25,6 @@ class ApplicationController extends Controller
         $data = $request->validated();
         $application = CreateApplication::handle(ApplicationData::from($data), Auth::user());
 
-        return Inertia::location(route('teacher.application.show', $application->id));
-    }
-
-    public function show(TeacherApplication $application): Response
-    {
-        return Inertia::render('Teacher/Application/Index', [
-            'application' => $application,
-        ]);
+        return redirect()->route('teacher.application.index', $application->id);
     }
 }
