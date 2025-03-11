@@ -27,7 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
             AddLinkHeadersForPreloadedAssets::class,
         ]);
         $middleware->alias([
-            'approved' => ApplicationApprovedMiddleware::class,
+            'application_approved' => ApplicationApprovedMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
