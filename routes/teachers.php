@@ -14,5 +14,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('application', [ApplicationController::class, 'create'])->name('application.create');
     Route::post('application', [ApplicationController::class, 'store'])->name('application.store');
 
-    Route::get('application-status', [ApplicationStatusController::class, 'index'])->name('application.index');
+    Route::get('application-status', [ApplicationStatusController::class, 'index'])->name('applicationStatus.index');
 });

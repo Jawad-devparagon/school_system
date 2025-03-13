@@ -11,7 +11,7 @@ class ApplicationStatusController extends Controller
 {
     public function index(): Response
     {
-        $user = Auth::user()->load('teacherApplications');
+        $user = Auth::user();
 
         return Inertia::render('Teacher/Application/ApplicationStatus', [
             'status' => $user->teacherApplications()->latest()->first()->status,
