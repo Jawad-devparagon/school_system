@@ -12,7 +12,8 @@ class ApplicationApprovedMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (! (Auth::user()->teacherApplications()->where('status', TeacherApplicationStatusEnum::APPROVED)->latest()->exists())) {
+        $lastApplication = Auth::user()->teacherApplications()->latest()->first();
+        if ($lastApplication->status !== TeacherApplicationStatusEnum::APPROVED) {
             return redirect()->route('teacher.applicationStatus.index');
         }
 
