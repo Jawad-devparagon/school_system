@@ -17,8 +17,8 @@ const buttonLabel = computed(() =>
     props.status === 'approved' ? 'Dashboard' : 'Create Application'
 );
 
-const redirect = computed(() =>
-    props.status === 'approved' ? route('dashboard') : route('teacher.application.create')
+const routeName = computed(() =>
+    props.status === 'approved' ? 'dashboard' : 'teacher.application.create'
 );
 
 </script>
@@ -32,7 +32,7 @@ const redirect = computed(() =>
       </span>
 
       <Anchor v-if="showButton"
-              :href="redirect"
+              :href="route(routeName)"
               class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       >
         {{ buttonLabel }}
