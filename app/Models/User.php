@@ -6,6 +6,8 @@ namespace App\Models;
 use App\Enums\GenderEnum;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -31,9 +33,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'remember_token',
     ];
 
-    public function application(): HasOne
+    public function teacherApplications(): HasMany
     {
-        return $this->hasOne(TeacherApplication::class);
+        return $this->hasMany(TeacherApplication::class);
     }
 
     public function teacher(): HasOne
@@ -46,11 +48,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Student::class);
     }
 
-    public function country()
+    public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
     }
 
+    public function latestTeacherApplication()
+    {
+        return $this->teacherApplications()->latest()->first();
+    }
     protected function casts(): array
     {
         return [

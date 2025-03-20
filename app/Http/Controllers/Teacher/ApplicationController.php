@@ -26,6 +26,6 @@ class ApplicationController extends Controller
         $data = $request->validated();
         CreateApplication::handle(ApplicationData::from($data), Auth::user());
 
-        return redirect('dashboard');
+        return redirect()->route('teacher.applicationStatus.index');
     }
 }
